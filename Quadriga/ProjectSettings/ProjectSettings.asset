@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: cf2a851ab42ad3443b8952d760bcbcc3
+  productGUID: b17f15f8de5cd494182e3f891c5d9bd4
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Vincere
+  productName: Quadriga
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -587,9 +587,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 0f1886ba-e6fe-4224-97b0-59c18afc0803
+  cloudProjectId: 72f6db56-aff2-49fb-8b16-0dd797bd5322
   framebufferDepthMemorylessMode: 0
-  projectName: Vincere (1)
+  projectName: Quadriga
   organizationId: neronics
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
