@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camera_Follow : MonoBehaviour
 {
     public GameObject player;
+    float followTime = 1f;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -12,6 +13,6 @@ public class Camera_Follow : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = player.transform.rotation;
+        Quaternion.Lerp(transform.rotation, player.transform.rotation, followTime * Time.deltaTime);
     }
 }
