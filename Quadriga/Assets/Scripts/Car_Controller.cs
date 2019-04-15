@@ -45,11 +45,10 @@ public class Car_Controller : MonoBehaviour
         else
             speededUp = false;
 
-
     }
     void FixedUpdate()
     {   
         body.velocity = transform.up * speed;
-        body.angularVelocity = (Input.GetAxis("Horizontal") * torquePower);
+        body.angularVelocity = (Input.GetAxis("Player1_Rotation") * torquePower);
     }
 }
