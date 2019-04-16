@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class Car_Controller : MonoBehaviour
 {
-    public float speed;
+    protected float speed;
     public float acceleration;
     public float torquePower;
     public float maxSpeed;
     public float minSpeed;
     public float breakPower;
-    public bool breaking;
-    float rotate;
-    Rigidbody2D body;
-    KeyCode turnLeft;
-    KeyCode turnRight;
-    void Start()
+    protected bool breaking;
+    protected float rotate;
+    protected Rigidbody2D body;
+    protected KeyCode turnLeft;
+    protected KeyCode turnRight;
+    protected int playerNumber;
+
+    protected void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         breaking = false;
-        turnLeft = KeyCode.A;
-        turnRight = KeyCode.D;
     }
 
-    private void Update()
+    protected void Update()
     {
-        rotate = Input.GetAxis("Player1_Rotation");
+        if (playerNumber == 1)
+            rotate = Input.GetAxis("Player1_Rotation");
+        else if (playerNumber == 2)
+            rotate = Input.GetAxis("Player2_Rotation");
         if (Input.GetKey(turnLeft) && Input.GetKey(turnRight))
         {
             if (rotate > 0)
@@ -44,9 +47,8 @@ public class Car_Controller : MonoBehaviour
             else speed = maxSpeed;
             breaking = false;
         }
-        print(rotate);
     }
-    void FixedUpdate()
+    protected void FixedUpdate()
     {   
         body.velocity = transform.up * speed;
         if(!breaking)
