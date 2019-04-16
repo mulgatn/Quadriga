@@ -14,6 +14,7 @@ public class Display_Set : MonoBehaviour
         Display.displays[0].Activate();
         myCameras[1] = GameObject.FindGameObjectWithTag("Camera2").GetComponentInChildren<Camera>();
         myCameras[1].targetDisplay = 1;
-        Display.displays[1].Activate();
+        if(Display.displays.Length > 1)
+            Display.displays[1].Activate();
     }
 }
