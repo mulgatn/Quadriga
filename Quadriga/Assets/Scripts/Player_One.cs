@@ -8,6 +8,6 @@ public class Player_One : Car_Controller
     { 
         turnLeft = KeyCode.A;
         turnRight = KeyCode.D;
-        playerNumber = 1;   
+        playerNumber = 1;
     }
 }
