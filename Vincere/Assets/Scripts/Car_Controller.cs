@@ -116,8 +116,11 @@ public class Car_Controller : MonoBehaviour
     }
     protected void OnCollisionEnter2D(Collision2D other)
     {
-        speed = minSpeed;
-        body.velocity = Vector2.zero;
+        if(other.gameObject.tag == "Bounds")
+        {
+            speed = minSpeed;
+            body.velocity = Vector2.zero;
+        }
     }
 
     public bool checkWin()

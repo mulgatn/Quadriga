@@ -9,6 +9,7 @@ TagManager:
   - Start_Line
   - Player1
   - Player2
+  - Bounds
   layers:
   - Default
   - TransparentFX

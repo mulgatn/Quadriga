@@ -8,6 +8,8 @@ public class Player_Two : Car_Controller
     {
         turnLeft = KeyCode.LeftArrow;
         turnRight = KeyCode.RightArrow;
+        goRight = KeyCode.Keypad2;
+        goLeft = KeyCode.Keypad1;
         playerNumber = 2;
     }
 }
