@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Player_One : Car_Controller
 {
-    void Start()
+    void Awake()
     { 
-        turnLeft = KeyCode.A;
-        turnRight = KeyCode.D;
-        goRight = KeyCode.B;
-        goLeft = KeyCode.V;
         playerNumber = 1;
     }
 }

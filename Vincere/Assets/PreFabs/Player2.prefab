@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3690206821689499224}
   - component: {fileID: 3690206821689499225}
+  - component: {fileID: 4248700398092211269}
   - component: {fileID: 3690206821689499226}
   - component: {fileID: 3690206821689499227}
   - component: {fileID: 3690206821689499223}
@@ -56,6 +57,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4248700398092211269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690206821689499228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c3c2e2e82302e4a9f7b4597fea98f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  acceleration: 1
+  torquePower: -52.5
+  maxSpeed: 15
+  minSpeed: 0
+  breakPower: 15
+  breaking: 0
+  rotate: 0
+  goingLeft: 0
+  goingRight: 0
 --- !u!114 &3690206821689499226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,11 +91,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23199f64aff6d6a4d85e8636d3c8c90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   acceleration: 1
   torquePower: -52.5
   maxSpeed: 15
   minSpeed: 0
   breakPower: 15
+  breaking: 0
+  rotate: 0
+  playerNumber: 0
+  goingLeft: 0
+  goingRight: 0
 --- !u!212 &3690206821689499227
 SpriteRenderer:
   m_ObjectHideFlags: 0
