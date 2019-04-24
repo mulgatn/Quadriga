@@ -10,6 +10,12 @@ TagManager:
   - Player1
   - Player2
   - Bounds
+  - Obstacle
+  - Main_Menu_Track
+  - Menu_Top_Collider
+  - Menu_Bottom_Collider
+  - Main_Menu_Tracks
+  - Main_Menu_Tracks_2
   layers:
   - Default
   - TransparentFX
@@ -21,7 +27,7 @@ TagManager:
   - 
   - Camera1
   - Camera2
-  - 
+  - Minimap
   - 
   - 
   - 

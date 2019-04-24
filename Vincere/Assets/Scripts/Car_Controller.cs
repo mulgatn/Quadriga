@@ -14,6 +14,7 @@ public class Car_Controller : MonoBehaviour
         lapCount = 0;
         isWon = false;
         isActive = true;
+        
     }
 
     protected void Update()
@@ -39,10 +40,19 @@ public class Car_Controller : MonoBehaviour
     {
         if (other.gameObject.tag == "Start_Line")
             lapCount++;
+
     }
     protected void OnCollisionEnter2D(Collision2D other)
+    {     
+        if (other.gameObject.tag == "Obstacle")
+        {
+            GetComponent<Player_Movement>().resetSpeed();
+            Destroy(other.gameObject);
+        }
+    }
+    protected void OnCollisionStay2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Bounds")
+        if (other.gameObject.tag == "Bounds")
         {
             GetComponent<Player_Movement>().BoundCollision();
         }

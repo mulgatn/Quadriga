@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End_Game_Controller : MonoBehaviour
 {
@@ -19,6 +20,16 @@ public class End_Game_Controller : MonoBehaviour
         {
             playerOneText.text = playerOneText.text + " LOST...";
             playerTwoText.text = playerTwoText.text + " WON!";
+        }
+        
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            Debug.Log("sa");
+            SceneManager.LoadScene("Level_One");
         }
     }
 }
