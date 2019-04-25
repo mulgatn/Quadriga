@@ -8,7 +8,6 @@ public class Main_Menu_Controller : MonoBehaviour
 {
     public Text[] startTexts;
     public Canvas[] myCanvases;
-    public float textSpeed;
     private bool pressedEnter;
 
     private Vector2 start;
@@ -21,11 +20,6 @@ public class Main_Menu_Controller : MonoBehaviour
     public Vector2 addedEnd;
 
     private float timer;
-    public Vector2 start;
-    public Vector2 middle;
-    public Vector2 end;
-
-    float timer;
     public float travelTime;
 
     private void Start()
@@ -33,35 +27,36 @@ public class Main_Menu_Controller : MonoBehaviour
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
         middle2 = start + addedMiddle2;
-        addedEnd = new Vector2( 0, -(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height));
+        addedEnd = new Vector2(0, -(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height));
         end = start + addedEnd;
     }
 
     void Update()
     {
-        if(pressedEnter)
+        Debug.Log(startTexts[1].transform.position.y + " AND " + end.y);
+        if (pressedEnter)
         {
             timer += Time.deltaTime;
             StartGame();
         }
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
-        if (startTexts[0].transform.position.y == end.y && startTexts[1].transform.position.y == end.y)
+        if (timer / travelTime > 1f)
             SceneManager.LoadScene("Level_One");
 
     }
 
     private void StartGame()
     {
-        foreach(Text startText in startTexts)
-            startText.transform.position = SecondEaseOut(start, middle1, middle2, end, timer/travelTime);
+        foreach (Text startText in startTexts)
+            startText.transform.position = SecondEaseOut(start, middle1, middle2, end, timer / travelTime);
         pressedEnter = true;
     }
 
-    private Vector2 FirstEaseOut(Vector2 start,Vector2 middle, Vector2 end, float time)
+    private Vector2 FirstEaseOut(Vector2 start, Vector2 middle, Vector2 end, float time)
     {
-            Vector2 temp1 = Vector2.Lerp(start, middle, time);
-            Vector2 temp2 = Vector2.Lerp(middle, end, time);
+        Vector2 temp1 = Vector2.Lerp(start, middle, time);
+        Vector2 temp2 = Vector2.Lerp(middle, end, time);
 
         return Vector2.Lerp(temp1, temp2, time);
     }
@@ -72,19 +67,5 @@ public class Main_Menu_Controller : MonoBehaviour
         Vector2 temp2 = FirstEaseOut(f_middle, s_middle, end, time);
 
         return Vector2.Lerp(temp1, temp2, time);
-        timer = 0;
-    }
-
-
-    private void Update()
-    {
-        timer += Time.deltaTime;
-        startTexts[0].transform.position = QuadraticCurve(start, middle, end, timer / travelTime);
-    }
-
-
-    public Vector2 QuadraticCurve(Vector2 start, Vector2 middle, Vector2 end, float time)
-    {
-        return Vector2.Lerp(Vector2.Lerp(start, middle, time), Vector2.Lerp(middle, end, time), time);
     }
 }
