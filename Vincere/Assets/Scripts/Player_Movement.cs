@@ -119,4 +119,9 @@ public class Player_Movement : MonoBehaviour
         speed = minSpeed;
         body.velocity = Vector2.zero;
     }
+
+    public void resetSpeed()
+    {
+        speed = minSpeed;
+    }
 }
