@@ -48,15 +48,21 @@ public class Car_Controller : MonoBehaviour
     {     
         if (other.gameObject.tag == "Obstacle")
         {
+            GetComponent<Camera_Shake>().magnitude = movement.speed / 2f;
+            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
             movement.resetSpeed();
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Bounds")
+        {
+            GetComponent<Camera_Shake>().magnitude = movement.speed / 2f;
+            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
+        }       
     }
     protected void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Bounds")
         {
-            //GetComponent<Camera_Shake>().shakeReady = true;
             movement.BoundCollision();
         }
     }
