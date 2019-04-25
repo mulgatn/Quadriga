@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3690206821689499224}
   - component: {fileID: 3690206821689499225}
-  - component: {fileID: 4517610458829846104}
+  - component: {fileID: 4269934353504753544}
   - component: {fileID: 4248700398092211269}
   - component: {fileID: 3690206821689499226}
   - component: {fileID: 3690206821689499227}
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4517610458829846104
+--- !u!114 &4269934353504753544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,9 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeReady: 0
-  duration: 0.3
+  duration: 5
   frequency: 2
-  cam: {fileID: 2299654348878111605, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
+  cam: {fileID: 0}
+  shaker: {fileID: 0}
 --- !u!114 &4248700398092211269
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,31 +8,30 @@ public class Camera_Shake : MonoBehaviour
     [HideInInspector]
     public bool shakeReady;
 
+    private Player_Movement movement;
+
     public float duration;
-    private float magnitude;
+    public float magnitude;
     public float frequency;
 
-    private float shakeTimer = 0;
+    public float shakeTimer = 0;
 
     public CinemachineVirtualCamera cam;
-    private CinemachineBasicMultiChannelPerlin shaker;
+    public CinemachineBasicMultiChannelPerlin shaker;
 
     private void Start()
     {
+        movement = GetComponent<Player_Movement>();
         if (cam != null)
-            shaker = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            shaker = cam.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();         
     }
 
     private void Update()
     {
-        magnitude = GetComponent<Player_Movement>().speed;
-        if (shakeReady)
-            shakeTimer = duration;
         if (cam != null || shaker != null)
         {
             if (shakeTimer > 0)
-            {
-                Debug.Log("Reached here");
+            {  
                 shaker.m_AmplitudeGain = magnitude;
                 shaker.m_FrequencyGain = frequency;
 
