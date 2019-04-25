@@ -10,6 +10,17 @@ public class Main_Menu_Controller : MonoBehaviour
     public Canvas[] myCanvases;
     public float textSpeed;
     private bool pressedEnter;
+
+    private Vector2 start;
+    private Vector2 middle1;
+    private Vector2 middle2;
+    private Vector2 end;
+
+    public Vector2 addedMiddle1;
+    public Vector2 addedMiddle2;
+    public Vector2 addedEnd;
+
+    private float timer;
     public Vector2 start;
     public Vector2 middle;
     public Vector2 end;
@@ -19,6 +30,48 @@ public class Main_Menu_Controller : MonoBehaviour
 
     private void Start()
     {
+        start = startTexts[0].transform.position;
+        middle1 = start + addedMiddle1;
+        middle2 = start + addedMiddle2;
+        addedEnd = new Vector2( 0, -(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height));
+        end = start + addedEnd;
+    }
+
+    void Update()
+    {
+        if(pressedEnter)
+        {
+            timer += Time.deltaTime;
+            StartGame();
+        }
+        if (Input.GetKey(KeyCode.Return))
+            pressedEnter = true;
+        if (startTexts[0].transform.position.y == end.y && startTexts[1].transform.position.y == end.y)
+            SceneManager.LoadScene("Level_One");
+
+    }
+
+    private void StartGame()
+    {
+        foreach(Text startText in startTexts)
+            startText.transform.position = SecondEaseOut(start, middle1, middle2, end, timer/travelTime);
+        pressedEnter = true;
+    }
+
+    private Vector2 FirstEaseOut(Vector2 start,Vector2 middle, Vector2 end, float time)
+    {
+            Vector2 temp1 = Vector2.Lerp(start, middle, time);
+            Vector2 temp2 = Vector2.Lerp(middle, end, time);
+
+        return Vector2.Lerp(temp1, temp2, time);
+    }
+
+    private Vector2 SecondEaseOut(Vector2 start, Vector2 f_middle, Vector2 s_middle, Vector2 end, float time)
+    {
+        Vector2 temp1 = FirstEaseOut(start, f_middle, s_middle, time);
+        Vector2 temp2 = FirstEaseOut(f_middle, s_middle, end, time);
+
+        return Vector2.Lerp(temp1, temp2, time);
         timer = 0;
     }
 

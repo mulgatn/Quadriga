@@ -33,7 +33,6 @@ public class Game_Controller : MonoBehaviour
         }
         if (gameOver)
             SceneManager.LoadScene("End_Screen");
-            Debug.Log(Input.GetAxisRaw("Player1_Rotation"));
     }
 }
  

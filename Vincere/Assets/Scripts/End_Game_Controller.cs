@@ -27,9 +27,6 @@ public class End_Game_Controller : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.R))
-        {
-            Debug.Log("sa");
             SceneManager.LoadScene("Level_One");
-        }
     }
 }
