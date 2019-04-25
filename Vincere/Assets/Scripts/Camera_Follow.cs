@@ -7,7 +7,7 @@ public class Camera_Follow : MonoBehaviour
     public Transform player;
     public float rotationSpeed;
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, player.rotation, rotationSpeed);
     }
