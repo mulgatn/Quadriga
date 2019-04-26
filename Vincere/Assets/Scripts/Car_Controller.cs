@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[RequireComponent] Player_Movement
 public class Car_Controller : MonoBehaviour
 {
     public int playerNumber;
     private int lapCount;
     protected bool isWon;
     private bool isActive;
+    private Player_Movement movement;
 
     protected void Start()
     {
         lapCount = 0;
         isWon = false;
         isActive = true;
-        
+        movement = GetComponent<Player_Movement>();
     }
 
     protected void Update()
     {
         if (isActive)
         {
-            GetComponent<Player_Movement>().check();
+            movement.check();
 
             if (lapCount == 4)
             {
@@ -33,7 +35,7 @@ public class Car_Controller : MonoBehaviour
     protected void FixedUpdate()
     {   
         if(isActive)
-            GetComponent<Player_Movement>().Movement();
+            movement.Movement();
     }
  
     protected void OnTriggerEnter2D(Collider2D other)
@@ -46,15 +48,22 @@ public class Car_Controller : MonoBehaviour
     {     
         if (other.gameObject.tag == "Obstacle")
         {
-            GetComponent<Player_Movement>().resetSpeed();
+            GetComponent<Camera_Shake>().magnitude = movement.speed / 2f;
+            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
+            movement.resetSpeed();
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Bounds")
+        {
+            GetComponent<Camera_Shake>().magnitude = movement.speed / 2f;
+            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
+        }       
     }
     protected void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Bounds")
         {
-            GetComponent<Player_Movement>().BoundCollision();
+            movement.BoundCollision();
         }
     }
 

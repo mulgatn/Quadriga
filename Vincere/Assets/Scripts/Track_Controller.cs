@@ -13,7 +13,6 @@ public class Track_Controller : MonoBehaviour
     private void Start()
     {
         halfLength = tracks[1].GetComponent<SpriteRenderer>().bounds.max.y - tracks[1].GetComponent<SpriteRenderer>().bounds.center.y;
-        Debug.Log(halfLength);
     }
 
     private void Update()
