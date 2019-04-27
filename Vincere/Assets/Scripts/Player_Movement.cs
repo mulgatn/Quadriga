@@ -59,6 +59,12 @@ public class Player_Movement : MonoBehaviour
             rotate = Input.GetAxisRaw("Player1_Rotation");
         else if (player.GetComponent<Car_Controller>().playerNumber == 2)
             rotate = Input.GetAxisRaw("Player2_Rotation");
+
+        if (!breaking && rotate == 0)
+            body.freezeRotation = true;
+        else
+            body.freezeRotation = false;
+
         if (rotate != 0f)
             if (speed == minSpeed)
                 speed += acceleration;

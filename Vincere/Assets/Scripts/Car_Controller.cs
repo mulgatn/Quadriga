@@ -13,6 +13,7 @@ public class Car_Controller : MonoBehaviour
     private Player_Movement movement;
     public CinemachineVirtualCamera cam;
     private Camera_Follow cam_follow;
+    private Camera_Shake cam_shaker;
 
     protected void Start()
     {
@@ -21,6 +22,7 @@ public class Car_Controller : MonoBehaviour
         isActive = true;
         movement = GetComponent<Player_Movement>();
         cam_follow = cam.GetComponent<Camera_Follow>();
+        cam_shaker = GetComponent<Camera_Shake>();
     }
 
     protected void Update()
@@ -61,15 +63,15 @@ public class Car_Controller : MonoBehaviour
     {     
         if (other.gameObject.tag == "Obstacle")
         {
-            GetComponent<Camera_Shake>().magnitude = movement.speed / 4f;
-            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
+            cam_shaker.magnitude = movement.speed / 4f;
+            cam_shaker.shakeTimer = cam_shaker.duration;
             movement.obstacleCollision();
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Bounds")
         {
-            GetComponent<Camera_Shake>().magnitude = movement.speed / 2f;
-            GetComponent<Camera_Shake>().shakeTimer = GetComponent<Camera_Shake>().duration;
+            cam_shaker.magnitude = movement.speed / 2f;
+            cam_shaker.shakeTimer = cam_shaker.duration;
         }       
     }
     protected void OnCollisionStay2D(Collision2D other)
