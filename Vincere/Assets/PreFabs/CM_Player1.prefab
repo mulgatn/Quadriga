@@ -185,4 +185,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rotationSpeed: 0.125
+  rotationSpeed: 0
