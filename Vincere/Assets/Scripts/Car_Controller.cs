@@ -34,10 +34,6 @@ public class Car_Controller : MonoBehaviour
             else
                 cam_follow.rotationSpeed = 0f;
 
-            if (movement.breaking || movement.rotate != 0)
-                cam_follow.rotationSpeed = 0.1f;
-            else
-                cam_follow.rotationSpeed = 0;
             movement.check();
 
             if (lapCount == 4)
