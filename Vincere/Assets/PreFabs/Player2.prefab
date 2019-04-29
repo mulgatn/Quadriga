@@ -151,8 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeReady: 0
-  duration: 5
+  duration: 0.1
+  magnitude: 0
   frequency: 2
+  shakeTimer: 0
   cam: {fileID: 0}
   shaker: {fileID: 0}
 --- !u!114 &4248700398092211269
@@ -174,6 +176,7 @@ MonoBehaviour:
   minSpeed: 0
   breakPower: 15
   breaking: 0
+  rotate: 0
   goingLeft: 0
   goingRight: 0
 --- !u!114 &3690206821689499226
@@ -189,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
+  cam: {fileID: 0}
 --- !u!212 &3690206821689499227
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class Player_Movement : MonoBehaviour
     public float minSpeed;
     public float breakPower;
     public bool breaking;
-    private float rotate;
+    public float rotate;
     private float altRotate;
     public bool goingLeft;
     public bool goingRight;
@@ -25,6 +25,7 @@ public class Player_Movement : MonoBehaviour
     private KeyCode turnRightAlt;
     private KeyCode goLeftAlt;
     private KeyCode goRightAlt;
+
 
     void Start()
     {
@@ -58,6 +59,12 @@ public class Player_Movement : MonoBehaviour
             rotate = Input.GetAxisRaw("Player1_Rotation");
         else if (player.GetComponent<Car_Controller>().playerNumber == 2)
             rotate = Input.GetAxisRaw("Player2_Rotation");
+
+        if (!breaking && rotate == 0)
+            body.freezeRotation = true;
+        else
+            body.freezeRotation = false;
+
         if (rotate != 0f)
             if (speed == minSpeed)
                 speed += acceleration;
@@ -120,8 +127,22 @@ public class Player_Movement : MonoBehaviour
         body.velocity = Vector2.zero;
     }
 
-    public void resetSpeed()
+    public void obstacleCollision()
     {
-        speed = minSpeed;
+        body.velocity /= 2f;
+        speed /= 2;
+    }
+
+    public void playerCollision()
+    {
+        body.angularVelocity = 0;
+    }
+
+    public bool isControlled()
+    {
+        if (!breaking && rotate == 0 && body.angularVelocity != 0)
+            return false;
+        else
+            return true;
     }
 }
