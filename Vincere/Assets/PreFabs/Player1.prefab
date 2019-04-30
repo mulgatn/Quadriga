@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeReady: 0
-  duration: 0.1
+  duration: 0.2
   magnitude: 0
   frequency: 2
   shakeTimer: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c3c2e2e82302e4a9f7b4597fea98f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speedMagnitude: 0
   acceleration: 1
   torquePower: -52.5
   maxSpeed: 15
