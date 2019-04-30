@@ -27,7 +27,7 @@ public class Tutorial_Image : MonoBehaviour
                 index = 0;
             spriteRenderer.sprite = sprites[index];
             index++;
-            timer = 0f;
+            timer = 0;
         }
     }
 }

@@ -12,7 +12,6 @@ public class Car_Controller : MonoBehaviour
     private bool isActive;
     private Player_Movement movement;
     public CinemachineVirtualCamera cam;
-    private Camera_Follow cam_follow;
     private Camera_Shake cam_shaker;
 
     protected void Start()
@@ -21,7 +20,6 @@ public class Car_Controller : MonoBehaviour
         isWon = false;
         isActive = true;
         movement = GetComponent<Player_Movement>();
-        cam_follow = cam.GetComponent<Camera_Follow>();
         cam_shaker = GetComponent<Camera_Shake>();
     }
 
@@ -29,15 +27,6 @@ public class Car_Controller : MonoBehaviour
     {
         if (isActive)
         {
-            if (movement.isControlled())
-                cam_follow.rotationSpeed = 0.05f;
-            else
-                cam_follow.rotationSpeed = 0f;
-
-            if (movement.breaking || movement.rotate != 0)
-                cam_follow.rotationSpeed = 0.1f;
-            else
-                cam_follow.rotationSpeed = 0;
             movement.check();
 
             if (lapCount == 4)
@@ -52,7 +41,8 @@ public class Car_Controller : MonoBehaviour
         if(isActive)
             movement.Movement();
     }
- 
+
+
     protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Start_Line")
@@ -63,32 +53,52 @@ public class Car_Controller : MonoBehaviour
     {     
         if (other.gameObject.tag == "Obstacle")
         {
-            cam_shaker.magnitude = movement.speed / 4f;
-            cam_shaker.shakeTimer = cam_shaker.duration;
+            if(movement.speedMagnitude > 8f)
+            {
+                cam_shaker.magnitude = movement.speedMagnitude / 2f;
+                cam_shaker.shakeTimer = cam_shaker.duration;
+            }        
             movement.obstacleCollision();
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Bounds")
         {
-            cam_shaker.magnitude = movement.speed / 2f;
+            if (movement.speedMagnitude > 7f)
+            {
+                cam_shaker.magnitude = movement.speedMagnitude;
+                cam_shaker.shakeTimer = cam_shaker.duration;
+            }
+            movement.BoundCollision();
+        }
+
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
+        {
+            cam_shaker.magnitude = movement.speedMagnitude / 3f;
             cam_shaker.shakeTimer = cam_shaker.duration;
-        }       
+            movement.playerCollision();
+        }
     }
     protected void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Bounds")
         {
-            movement.BoundCollision();
         }   
         if(other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
-            movement.playerCollision();
+            if(cam_shaker.shakeTimer == 0f)
+            {
+                cam_shaker.magnitude = movement.speedMagnitude / 10f;
+                cam_shaker.shakeTimer = cam_shaker.duration;
+            }    
         }
     }
 
     protected void OnCollisionExit2D(Collision2D other)
     {
-        
+        if (other.gameObject.tag == "Bounds" || other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
+        {
+            movement.QuitCollision();
+        }
     }
 
     public bool checkWin()
