@@ -11,10 +11,12 @@ public class Obstacle : MonoBehaviour
     public float waitTime;
     private float waitTimer;
     private new EdgeCollider2D collider;
+    private Renderer renderer;
 
     private void Awake()
     {
         collider = GetComponent<EdgeCollider2D>();
+        renderer = GetComponent<Renderer>();
     }
 
     private void Update()
@@ -23,18 +25,19 @@ public class Obstacle : MonoBehaviour
         waitTimer += Time.deltaTime;
         if (waitTimer < waitTime)
         {
+            collider.enabled = false;
             if (timer > blinkTimer)
             {
-                if (!GetComponent<Renderer>().enabled)
-                    GetComponent<Renderer>().enabled = true;
+                if (!renderer.enabled)
+                    renderer.enabled = true;
                 else
-                    GetComponent<Renderer>().enabled = false;
+                    renderer.enabled = false;
                 timer = 0;
             }
         }
         else
         {
-            GetComponent<Renderer>().enabled = true;
+            renderer.enabled = true;
             collider.enabled = true;
         }
     }
@@ -45,7 +48,6 @@ public class Obstacle : MonoBehaviour
         transform.eulerAngles = getRandomRotation();
         timer = 0;
         waitTimer = 0;
-        collider.enabled = false;
     }
 
     public Vector2 getRandomSpawn()
