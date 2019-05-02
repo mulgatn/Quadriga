@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7648799646965393409}
   - component: {fileID: 8692903536634235713}
   - component: {fileID: 7080840061254995884}
-  - component: {fileID: 8149490689880054779}
   - component: {fileID: 411104858142305861}
+  - component: {fileID: 1135833548135272618}
+  - component: {fileID: 8610473433808218049}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -27,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8610473433808218047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.6, y: 18.589537, z: -0.20703125}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,10 +69,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1591808717
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 001979af1a3e2f445b59e4764fa867dd, type: 3}
   m_Color: {r: 0.509434, g: 0.26650524, b: 0.17061234, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,45 +103,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!68 &8149490689880054779
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8610473433808218047}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.070136264, y: 0.0041362764}
-  - {x: -0.07013531, y: -0.03840561}
-  - {x: -0.06403704, y: -0.05044594}
-  - {x: -0.057779886, y: -0.05803585}
-  - {x: -0.047646046, y: -0.064331055}
-  - {x: -0.040433314, y: -0.06901455}
-  - {x: 0.03639355, y: -0.06943627}
-  - {x: 0.04845171, y: -0.06358452}
-  - {x: 0.057719994, y: -0.05773125}
-  - {x: 0.065740585, y: -0.049304582}
-  - {x: 0.071214676, y: -0.038548853}
-  - {x: 0.06988678, y: 0.03894596}
-  - {x: 0.06447621, y: 0.049583245}
-  - {x: 0.058431815, y: 0.058283426}
-  - {x: 0.04993067, y: 0.06411667}
-  - {x: 0.039436247, y: 0.069577985}
-  - {x: -0.036998272, y: 0.07062588}
-  - {x: -0.05060425, y: 0.065506555}
-  - {x: -0.059775162, y: 0.0596138}
-  - {x: -0.06529665, y: 0.050683405}
-  - {x: -0.0708992, y: 0.039055254}
-  - {x: -0.069938086, y: 0.0037704469}
+  m_Constraints: 7
 --- !u!114 &411104858142305861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +116,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae1ba74d58d13d4f84775da04f0bafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnPoint: {x: 0, y: 0}
-  maxSpawnPoint: {x: 0, y: 0}
+  minSpawnPoint: {x: 7, y: -4}
+  maxSpawnPoint: {x: 15, y: 4}
   blinkTimer: 0.2
   waitTime: 5
+  cooldown: 3
+--- !u!61 &1135833548135272618
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610473433808218047}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03288746, y: -0.008223534}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.612627, y: 1.5961857}
+  m_EdgeRadius: 0
+--- !u!95 &8610473433808218049
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610473433808218047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1274970012f1a10438cf1232643d6e47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

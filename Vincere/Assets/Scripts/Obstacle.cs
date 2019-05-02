@@ -10,35 +10,46 @@ public class Obstacle : MonoBehaviour
     public float blinkTimer;
     public float waitTime;
     private float waitTimer;
-    private new EdgeCollider2D collider;
-    private Renderer renderer;
+    public float cooldown;
+    private new BoxCollider2D collider;
+    private new Renderer renderer;
+    private Animator animator;
 
     private void Awake()
     {
-        collider = GetComponent<EdgeCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         renderer = GetComponent<Renderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         timer += Time.deltaTime;
         waitTimer += Time.deltaTime;
-        if (waitTimer < waitTime)
+        if(!animator.GetBool("Broken"))
         {
-            collider.enabled = false;
-            if (timer > blinkTimer)
+            if (waitTimer < waitTime)
             {
-                if (!renderer.enabled)
-                    renderer.enabled = true;
-                else
-                    renderer.enabled = false;
-                timer = 0;
+                collider.enabled = false;
+                if (timer > blinkTimer)
+                {
+                    if (!renderer.enabled)
+                        renderer.enabled = true;
+                    else
+                        renderer.enabled = false;
+                    timer = 0;
+                }
+            }
+            else
+            {
+                renderer.enabled = true;
+                collider.enabled = true;
             }
         }
         else
         {
-            renderer.enabled = true;
-            collider.enabled = true;
+            collider.enabled = false;
+            StartCoroutine(deactivate());
         }
     }
 
@@ -47,7 +58,7 @@ public class Obstacle : MonoBehaviour
         transform.position = getRandomSpawn();
         transform.eulerAngles = getRandomRotation();
         timer = 0;
-        waitTimer = 0;
+        waitTimer = 0; 
     }
 
     public Vector2 getRandomSpawn()
@@ -58,5 +69,13 @@ public class Obstacle : MonoBehaviour
     public Vector3 getRandomRotation()
     {  
         return new Vector3(0, 0, Random.Range(0f, 360f));
+    }
+
+    IEnumerator deactivate()
+    {
+        yield return new WaitForSeconds(cooldown);
+        Debug.Log("Ready to deactivate");
+        animator.SetBool("Broken", false);
+        gameObject.SetActive(false);
     }
 }
