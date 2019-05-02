@@ -56,6 +56,9 @@ TagManager:
   - name: path
     uniqueID: 389478407
     locked: 0
+  - name: obstacle
+    uniqueID: 1591808717
+    locked: 0
   - name: car
     uniqueID: 2704244211
     locked: 0
