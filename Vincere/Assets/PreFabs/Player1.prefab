@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368098412397647643}
+  - component: {fileID: 7368098412397647644}
   - component: {fileID: 7368098412397647645}
-  - component: {fileID: 7625107027014059081}
+  - component: {fileID: 2415315066520119749}
   - component: {fileID: 5242633816756765767}
   - component: {fileID: 7368098412397647642}
-  - component: {fileID: 7368098412397647644}
+  - component: {fileID: 1876603970670288053}
   - component: {fileID: 7368098412397647641}
   m_Layer: 0
   m_Name: Player1
@@ -30,84 +31,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7368098412397647646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.440001, y: -3, z: 0}
+  m_LocalPosition: {x: 11.804, y: -3.213, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.2016522}
   m_Children:
   - {fileID: 2133846656848722501}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &7368098412397647645
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368098412397647646}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 1
-  m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 4f87cba95c3b9a3469bb72cd5c51d04e, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7625107027014059081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368098412397647646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdce39decff64e84e9632d480b7d13f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeReady: 0
-  duration: 0.3
-  frequency: 2
-  cam: {fileID: 4706605267243229292, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e, type: 3}
---- !u!114 &5242633816756765767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368098412397647646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8c3c2e2e82302e4a9f7b4597fea98f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  acceleration: 1
-  torquePower: -52.5
-  maxSpeed: 15
-  minSpeed: 0
-  breakPower: 15
-  breaking: 0
-  goingLeft: 0
-  goingRight: 0
---- !u!114 &7368098412397647642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368098412397647646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7adf69664be144ab2d5561a3836df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumber: 0
 --- !u!212 &7368098412397647644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -143,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1590723085
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c48d3689c96f25c4aa41d787f8305618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,6 +86,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &7368098412397647645
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368098412397647646}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 4f87cba95c3b9a3469bb72cd5c51d04e, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2415315066520119749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368098412397647646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdce39decff64e84e9632d480b7d13f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeReady: 0
+  duration: 0.2
+  magnitude: 0
+  frequency: 2
+  shakeTimer: 0
+  cam: {fileID: 0}
+  shaker: {fileID: 0}
+--- !u!114 &5242633816756765767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368098412397647646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c3c2e2e82302e4a9f7b4597fea98f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMagnitude: 0
+  acceleration: 1
+  torquePower: -52.5
+  maxSpeed: 15
+  minSpeed: 0
+  breakPower: 15
+  breaking: 0
+  rotate: 0
+  goingLeft: 0
+  goingRight: 0
+--- !u!114 &7368098412397647642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368098412397647646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7adf69664be144ab2d5561a3836df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  lapCount: 0
+--- !u!114 &1876603970670288053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368098412397647646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19b5a26c7ef50a44bfc7925ed4b5529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check_Points: []
+  cam: {fileID: 0}
+  checkPointCount: 0
 --- !u!70 &7368098412397647641
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

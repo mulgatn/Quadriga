@@ -6,14 +6,14 @@ public class Player_Movement : MonoBehaviour
 {
     GameObject player;
     private Rigidbody2D body;
-    public float speed;
+    public float speedMagnitude;
     public float acceleration;
     public float torquePower;
     public float maxSpeed;
     public float minSpeed;
     public float breakPower;
     public bool breaking;
-    private float rotate;
+    public float rotate;
     private float altRotate;
     public bool goingLeft;
     public bool goingRight;
@@ -26,11 +26,12 @@ public class Player_Movement : MonoBehaviour
     private KeyCode goLeftAlt;
     private KeyCode goRightAlt;
 
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         breaking = false;
-        speed += acceleration;
+        speedMagnitude += acceleration;
         player = this.gameObject;
         if (player.GetComponent<Car_Controller>().playerNumber == 1)
         {
@@ -58,9 +59,17 @@ public class Player_Movement : MonoBehaviour
             rotate = Input.GetAxisRaw("Player1_Rotation");
         else if (player.GetComponent<Car_Controller>().playerNumber == 2)
             rotate = Input.GetAxisRaw("Player2_Rotation");
+
+        speedMagnitude = body.velocity.magnitude;
+
+        if (isControlled())
+            body.freezeRotation = false;
+        else
+            body.freezeRotation = true;
+
         if (rotate != 0f)
-            if (speed == minSpeed)
-                speed += acceleration;
+            if (speedMagnitude == minSpeed)
+                speedMagnitude += acceleration;
         if (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt))
             goingLeft = true;
         else
@@ -72,18 +81,17 @@ public class Player_Movement : MonoBehaviour
 
         if ((Input.GetKey(turnLeft) || Input.GetKey(turnLeftAlt)) && (Input.GetKey(turnRight) || Input.GetKey(turnRightAlt)))
         {
-            speed -= breakPower;
+            speedMagnitude -= breakPower;
             breaking = true;
-            if (speed < minSpeed)
-                speed = minSpeed;
+            if (speedMagnitude < minSpeed)
+                speedMagnitude = minSpeed;
         }
         else
-        {
-            if (speed < maxSpeed && speed != minSpeed)
-                speed += acceleration;
-            else if (speed > maxSpeed)
-                speed = maxSpeed;
             breaking = false;
+        if(maxSpeed < 8f)
+        {
+            goingLeft = false;
+            goingRight = false;
         }
     }
 
@@ -91,22 +99,22 @@ public class Player_Movement : MonoBehaviour
     {
         if (!breaking)
             body.angularVelocity = (rotate * torquePower);
-        if (body.velocity.magnitude < maxSpeed && speed != minSpeed)
-            body.AddForce(transform.up * acceleration * 10f);
+        if (speedMagnitude < maxSpeed && speedMagnitude != minSpeed)
+            body.AddForce(transform.up * acceleration * maxSpeed);
         body.velocity = ForwardVelocity();
         if (goingRight || goingLeft)
         {
             if (goingRight)
             {
-                Vector2 temp = transform.right * 2f;
+                Vector2 temp = transform.right * 3f;
                 body.velocity = body.velocity + temp;
             }
             else
             {
-                Vector2 temp = -transform.right * 2f;
+                Vector2 temp = -transform.right * 3f;
                 body.velocity = body.velocity + temp;
             }
-        }  
+        }
     }
 
     private Vector2 ForwardVelocity()
@@ -116,12 +124,34 @@ public class Player_Movement : MonoBehaviour
 
     public void BoundCollision()
     {
-        speed = minSpeed;
         body.velocity = Vector2.zero;
+        body.angularVelocity = 0;
+        maxSpeed /= 2;
     }
 
-    public void resetSpeed()
+    public void QuitCollision()
     {
-        speed = minSpeed;
+            maxSpeed = 15f;
+    }
+
+    public void obstacleCollision()
+    {
+        body.velocity /= 2f;
+        body.angularVelocity = 0;
+    }
+
+    public void playerCollision()
+    {
+        body.velocity /= 2f;
+        body.angularVelocity = 0;
+        maxSpeed /= 2;
+    }
+
+    public bool isControlled()
+    {
+        if (Input.GetButton("Player1_Rotation") || Input.GetButton("Player2_Rotation"))
+            return true;
+        else
+            return false;
     }
 }
