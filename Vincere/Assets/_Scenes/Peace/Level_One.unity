@@ -205,6 +205,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_3
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -22.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -23.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,31 +284,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: -12.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: -22.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: -23.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: -9.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -682,6 +682,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_4
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -14.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,31 +761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: 13.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: -16.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: -14.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: 8.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1005,6 +1005,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_2
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -12.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1060,31 +1085,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: -8.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: -3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: -2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: -12.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_Enabled
@@ -1103,6 +1103,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -35.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -32.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 7.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1158,31 +1183,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: -35.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: -32.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: 6.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: 7.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1341,6 +1341,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_5
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -13.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: 16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: 16.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1395,31 +1420,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: -13.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: 16.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: 16.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: -9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1640,7 +1640,7 @@ GameObject:
   - component: {fileID: 1863081089}
   - component: {fileID: 1863081088}
   m_Layer: 0
-  m_Name: Placeholder_Arena
+  m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,7 +1683,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 999cd8e4cac82e04297bcf3992f33646, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ab5d28e50b38834cb8fb43293438c9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1728,6 +1728,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: 37.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1783,31 +1808,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.x
-      value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: minSpawnPoint.y
-      value: 37.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.x
-      value: -3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: maxSpawnPoint.y
-      value: 34.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
-        type: 3}
-      propertyPath: waitTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1135833548135272618, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
