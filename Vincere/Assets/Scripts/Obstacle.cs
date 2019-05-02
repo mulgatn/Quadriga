@@ -74,7 +74,6 @@ public class Obstacle : MonoBehaviour
     IEnumerator deactivate()
     {
         yield return new WaitForSeconds(cooldown);
-        Debug.Log("Ready to deactivate");
         animator.SetBool("Broken", false);
         gameObject.SetActive(false);
     }
