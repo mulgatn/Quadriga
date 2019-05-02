@@ -13,6 +13,9 @@ public class Track_Controller : MonoBehaviour
     private void Start()
     {
         halfLength = tracks[1].GetComponent<SpriteRenderer>().bounds.max.y - tracks[1].GetComponent<SpriteRenderer>().bounds.center.y;
+        tracks[0].transform.position = new Vector2(player.transform.position.x, 0);
+        tracks[1].transform.position = new Vector2(player.transform.position.x, halfLength * 2);
+        tracks[2].transform.position = new Vector2(player.transform.position.x, tracks[1].transform.position.y + halfLength * 2);
     }
 
     private void Update()
