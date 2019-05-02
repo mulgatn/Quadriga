@@ -148,15 +148,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_4
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -22.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -23.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -9.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.3
+      value: -9.2
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.4
+      value: -22.8
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -488,15 +508,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_6
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -14.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: 8.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.1
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.1
+      value: -16.7
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -615,15 +655,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_3
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -12.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.2
+      value: -12.9
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.8
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -689,15 +749,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_5
       objectReference: {fileID: 0}
-    - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
-      propertyPath: m_LocalPosition.x
+      propertyPath: minSpawnPoint.y
+      value: -35.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: -32.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
       value: 7.9
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.7
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -787,15 +867,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_7
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: -13.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: 16.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: 16.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -9.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.6
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.8
+      value: 16.7
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -979,15 +1079,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_2
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: 37.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: 34.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.56
+      value: 34.2
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
@@ -1359,15 +1479,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.y
+      value: 12.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: minSpawnPoint.x
+      value: 12.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.y
+      value: 17.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 411104858142305861, guid: 6de2926aceb008f479706a13210c8823,
+        type: 3}
+      propertyPath: maxSpawnPoint.x
+      value: 10.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.83
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.13
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 7648799646965393409, guid: 6de2926aceb008f479706a13210c8823,
         type: 3}
