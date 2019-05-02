@@ -33,7 +33,6 @@ public class Main_Menu_Controller : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(startTexts[1].transform.position.y + " AND " + end.y);
         if (pressedEnter)
         {
             timer += Time.deltaTime;

@@ -88,6 +88,11 @@ public class Player_Movement : MonoBehaviour
         }
         else
             breaking = false;
+        if(maxSpeed < 8f)
+        {
+            goingLeft = false;
+            goingRight = false;
+        }
     }
 
     public void Movement()
