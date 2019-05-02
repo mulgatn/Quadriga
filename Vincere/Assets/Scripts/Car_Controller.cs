@@ -59,7 +59,7 @@ public class Car_Controller : MonoBehaviour
                 cam_shaker.shakeTimer = cam_shaker.duration;
             }        
             movement.obstacleCollision();
-            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
         }
         if (other.gameObject.tag == "Bounds")
         {
