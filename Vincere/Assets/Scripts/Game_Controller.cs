@@ -33,6 +33,10 @@ public class Game_Controller : MonoBehaviour
         }
         if (gameOver)
             SceneManager.LoadScene("End_Screen");
+        if (Input.GetKey(KeyCode.R))
+            SceneManager.LoadScene("Level_One");
+        if (Input.GetKey(KeyCode.E))
+            SceneManager.LoadScene("Main_Menu");
     }
 }
  
