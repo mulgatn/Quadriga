@@ -13,13 +13,13 @@ public class End_Game_Controller : MonoBehaviour
     {
        if(PlayerPrefs.GetInt("Winner") == 1)
         {
-            playerOneText.text = playerOneText.text +  " WON!";
-            playerTwoText.text = playerTwoText.text + " LOST...";
+            playerOneText.text = playerOneText.text +  " Won!";
+            playerTwoText.text = playerTwoText.text + " Lost...";
         }
         else
         {
-            playerOneText.text = playerOneText.text + " LOST...";
-            playerTwoText.text = playerTwoText.text + " WON!";
+            playerOneText.text = playerOneText.text + " Lost...";
+            playerTwoText.text = playerTwoText.text + " Won!";
         }
         
     }
