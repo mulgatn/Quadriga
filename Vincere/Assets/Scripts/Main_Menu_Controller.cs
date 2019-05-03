@@ -27,8 +27,8 @@ public class Main_Menu_Controller : MonoBehaviour
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
         middle2 = start + addedMiddle2;
-        addedEnd = new Vector2(0, -(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height));
         end = start + addedEnd;
+        //Debug.Log(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height);
     }
 
     void Update()
