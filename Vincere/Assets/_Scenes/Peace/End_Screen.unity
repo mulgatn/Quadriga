@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerOneText: {fileID: 907848235}
-  playerTwoText: {fileID: 0}
+  playerTwoText: {fileID: 1119317917}
 --- !u!1 &582516740
 GameObject:
   m_ObjectHideFlags: 0
