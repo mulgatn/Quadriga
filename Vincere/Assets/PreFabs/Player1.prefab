@@ -191,6 +191,9 @@ MonoBehaviour:
   minSpeed: 0
   breakPower: 15
   breaking: 0
+  speedBoost: 15
+  speedBoostAcceleration: 2
+  speedBoostDuration: 3
   rotate: 0
   goingLeft: 0
   goingRight: 0
@@ -207,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
+  boostReady: 0
   lapCount: 0
 --- !u!1 &7387918031667556866
 GameObject:
@@ -327,6 +331,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19b5a26c7ef50a44bfc7925ed4b5529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check_Points: []
+  check_Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  otherPlayer: {fileID: 0}
   cam: {fileID: 0}
   checkPointCount: 0
