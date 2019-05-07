@@ -94,7 +94,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05385971, y: 0.18850708}
+  m_Offset: {x: -0.051439285, y: 0.2057848}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.421982, y: 5.906702}
+  m_Size: {x: 5.369831, y: 5.8842907}
   m_EdgeRadius: 0
 --- !u!114 &733613065168692181
 MonoBehaviour:
@@ -119,7 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19b5a26c7ef50a44bfc7925ed4b5529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check_Points: []
+  check_Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  otherPlayer: {fileID: 0}
   cam: {fileID: 2299654348878111605, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
   checkPointCount: 0
 --- !u!1 &3690206821689499228
@@ -135,7 +148,6 @@ GameObject:
   - component: {fileID: 4269934353504753544}
   - component: {fileID: 4248700398092211269}
   - component: {fileID: 3690206821689499226}
-  - component: {fileID: 6220845798065886589}
   - component: {fileID: 3690206821689499222}
   m_Layer: 0
   m_Name: Player2
@@ -219,6 +231,9 @@ MonoBehaviour:
   minSpeed: 0
   breakPower: 15
   breaking: 0
+  speedBoost: 15
+  speedBoostAcceleration: 2
+  speedBoostDuration: 3
   rotate: 0
   goingLeft: 0
   goingRight: 0
@@ -235,34 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
+  boostReady: 0
   lapCount: 0
---- !u!114 &6220845798065886589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3690206821689499228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19b5a26c7ef50a44bfc7925ed4b5529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  check_Points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cam: {fileID: 0}
-  checkPointCount: 0
 --- !u!70 &3690206821689499222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -372,6 +361,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04, y: -0.27999997}
+  m_Offset: {x: -0.09144592, y: -0.56999993}
   serializedVersion: 2
-  m_Radius: 1.4177682
+  m_Radius: 1.4695168

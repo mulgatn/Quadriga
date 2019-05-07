@@ -8,6 +8,7 @@ public class Car_Controller : MonoBehaviour
     public int playerNumber;
     protected bool isWon;
     private bool isActive;
+    public bool boostReady;
     public int lapCount;
     private Player_Movement movement;
 
@@ -22,7 +23,8 @@ public class Car_Controller : MonoBehaviour
     {
          if (isActive)
          {
-             movement.check();
+            movement.check();
+            Debug.Log(playerNumber + " = Speed Boost " + boostReady);
             if (lapCount == 3)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);

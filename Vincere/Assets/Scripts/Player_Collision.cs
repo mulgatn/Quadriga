@@ -8,6 +8,8 @@ public class Player_Collision : MonoBehaviour
     private Rigidbody2D body;
     public GameObject[] check_Points;
     private Player_Movement movement;
+    private Car_Controller carController;
+    public Car_Controller otherPlayer;
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
     public int checkPointCount;
@@ -16,6 +18,7 @@ public class Player_Collision : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
         cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
+        carController = transform.parent.gameObject.GetComponent<Car_Controller>();
         checkPointCount = 0;
     }
 
@@ -79,7 +82,11 @@ public class Player_Collision : MonoBehaviour
             if (checkPointCount == check_Points.Length)
             {
                 checkPointCount = 0;
-                GetComponent<Car_Controller>().lapCount++;
+                if (otherPlayer.lapCount > carController.lapCount)
+                    carController.boostReady = true;
+                else
+                    carController.boostReady = false;
+                carController.lapCount++;
             }         
         }
         
