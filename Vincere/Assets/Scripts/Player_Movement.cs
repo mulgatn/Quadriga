@@ -38,6 +38,8 @@ public class Player_Movement : MonoBehaviour
 
     private Car_Controller carController;
 
+    public ParticleSystem dust;
+
 
     void Start()
     {
@@ -75,6 +77,9 @@ public class Player_Movement : MonoBehaviour
             rotate = Input.GetAxisRaw("Player2_Rotation");
 
         speedMagnitude = body.velocity.magnitude;
+
+        var emission = dust.emission;
+        emission.rateOverTime = speedMagnitude;
 
         if (isControlled())
             body.freezeRotation = false;
