@@ -143,7 +143,7 @@ public class Player_Movement : MonoBehaviour
                 body.velocity = body.velocity + temp;
             }
         }
-        if (boostUsing)
+        if (boostUsing && !breaking)
             speedUp();
     }
 
