@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    GameObject player;
     private Rigidbody2D body;
+
     public float speedMagnitude;
     public float acceleration;
     public float torquePower;
     public float maxSpeed;
     public float minSpeed;
+
     public float breakPower;
     public bool breaking;
+
+    private bool boostUsing;
+    private bool boostUsed;
+    public float speedBoost;
+    public float speedBoostAcceleration;
+    public float speedBoostDuration;
+
     public float rotate;
-    private float altRotate;
     public bool goingLeft;
     public bool goingRight;
+
+
     private KeyCode turnLeft;
     private KeyCode turnRight;
     private KeyCode goLeft;
@@ -25,20 +34,24 @@ public class Player_Movement : MonoBehaviour
     private KeyCode turnRightAlt;
     private KeyCode goLeftAlt;
     private KeyCode goRightAlt;
+    private string boost;
+
+    private Car_Controller carController;
 
 
     void Start()
     {
+        carController = GetComponent<Car_Controller>();
         body = GetComponent<Rigidbody2D>();
         breaking = false;
         speedMagnitude += acceleration;
-        player = this.gameObject;
-        if (player.GetComponent<Car_Controller>().playerNumber == 1)
+        if (carController.playerNumber == 1)
         {
             turnLeft = KeyCode.A;
             turnRight = KeyCode.D;
             goRight = KeyCode.B;
             goLeft = KeyCode.V;
+            boost = "Player1_Boost";
         }
         else
         {
@@ -50,14 +63,15 @@ public class Player_Movement : MonoBehaviour
             turnRightAlt = KeyCode.JoystickButton5;
             goLeftAlt = KeyCode.JoystickButton6;
             goRightAlt = KeyCode.JoystickButton7;
+            boost = "Player2_Boost";
         }
     }
 
     public void check()
     {
-        if (player.GetComponent<Car_Controller>().playerNumber == 1)
+        if (carController.playerNumber == 1)
             rotate = Input.GetAxisRaw("Player1_Rotation");
-        else if (player.GetComponent<Car_Controller>().playerNumber == 2)
+        else if (carController.playerNumber == 2)
             rotate = Input.GetAxisRaw("Player2_Rotation");
 
         speedMagnitude = body.velocity.magnitude;
@@ -88,6 +102,20 @@ public class Player_Movement : MonoBehaviour
         }
         else
             breaking = false;
+
+        if (Input.GetButtonDown(boost) && carController.boostReady)
+        {
+            boostUsing = true;
+            carController.boostReady = false;
+            boostUsed = true;
+        }
+
+        if (boostUsed)
+        {
+            Invoke("resetBoost", speedBoostDuration);
+            boostUsed = false;
+        }
+
         if(maxSpeed < 8f)
         {
             goingLeft = false;
@@ -115,11 +143,24 @@ public class Player_Movement : MonoBehaviour
                 body.velocity = body.velocity + temp;
             }
         }
+        if (boostUsing && !breaking)
+            speedUp();
     }
 
     private Vector2 ForwardVelocity()
     {
         return transform.up * Vector2.Dot(body.velocity, transform.up);
+    }
+
+    public void speedUp()
+    {
+        body.AddForce(transform.up * speedBoost * speedBoostAcceleration);
+    }
+
+    private void resetBoost()
+    {
+        boostUsed = false;
+        boostUsing = false;
     }
 
     public void BoundCollision()
