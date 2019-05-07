@@ -2289,6 +2289,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2299654348878111607}
+    - target: {fileID: 4248700398092211269, guid: 6e0ea5f3a6659ea419caff32cd615c6d,
+        type: 3}
+      propertyPath: speedBoostDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 733613065168692181, guid: 6e0ea5f3a6659ea419caff32cd615c6d,
         type: 3}
       propertyPath: check_Points.Array.data[0]
@@ -2585,5 +2590,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 689140244}
+    - target: {fileID: 5242633816756765767, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: speedBoostDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44136b27d768554f94c7dc28b49c32b, type: 3}
