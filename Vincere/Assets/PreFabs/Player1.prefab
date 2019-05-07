@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 3808289586268348351}
   - component: {fileID: 5591266626284685381}
   - component: {fileID: 1038321385610915099}
+  - component: {fileID: 313797213013271211}
   m_Layer: 0
   m_Name: Horses
   m_TagString: Player1_Horses
@@ -348,6 +349,25 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   cam: {fileID: 0}
   checkPointCount: 0
+--- !u!95 &313797213013271211
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387918031667556866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7a6fa103b3ef8f4f85b0c123f7b5a58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8166055673325492235
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4183698311866548063
 Transform:
   m_ObjectHideFlags: 0
