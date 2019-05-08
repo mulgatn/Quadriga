@@ -15,7 +15,7 @@ public class Player_Movement : MonoBehaviour
     public float breakPower;
     public bool breaking;
 
-    private bool boostUsing;
+    public bool boostUsing;
     private bool boostUsed;
     public float speedBoost;
     public float speedBoostAcceleration;
