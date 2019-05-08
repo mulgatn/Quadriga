@@ -68,12 +68,16 @@ public class Player_Collision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            if (movement.speedMagnitude > 8f)
+            if (!movement.boostUsing)
             {
-                cam_shaker.magnitude = movement.speedMagnitude / 2f;
-                cam_shaker.shakeTimer = cam_shaker.duration;
+                if (movement.speedMagnitude > 8f)
+                {
+                    cam_shaker.magnitude = movement.speedMagnitude / 2f;
+                    cam_shaker.shakeTimer = cam_shaker.duration;
+                }
+                movement.obstacleCollision();
             }
-            movement.obstacleCollision();
+
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
         }
         if (other.gameObject == check_Points[checkPointCount])
