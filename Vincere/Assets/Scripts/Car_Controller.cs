@@ -29,7 +29,6 @@ public class Car_Controller : MonoBehaviour
             else
                 shout_Icon.SetActive(false);
             movement.check();
-            Debug.Log(playerNumber + " = Speed Boost " + boostReady);
             if (lapCount == 3)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);
