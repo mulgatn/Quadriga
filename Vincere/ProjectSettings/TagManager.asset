@@ -16,6 +16,12 @@ TagManager:
   - Menu_Bottom_Collider
   - Main_Menu_Tracks
   - Main_Menu_Tracks_2
+  - Player1_Horses
+  - Player2_Horses
+  - Player1_Chariot
+  - Player2_Chariot
+  - Player1_Dust
+  - Player2_Dust
   layers:
   - Default
   - TransparentFX
@@ -28,7 +34,7 @@ TagManager:
   - Camera1
   - Camera2
   - Minimap
-  - 
+  - Audience
   - 
   - 
   - 
