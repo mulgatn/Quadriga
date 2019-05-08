@@ -14,9 +14,6 @@ public class horse_animation : MonoBehaviour
 
     void Update()
     {
-        if(!Input.GetKey(KeyCode.U))
             animator.SetFloat("Animation_Speed", player.velocity.magnitude * 1.5f);
-        else
-            animator.SetFloat("Animation_Speed", player.velocity.magnitude * 15f);
     }
 }
