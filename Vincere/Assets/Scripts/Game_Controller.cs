@@ -19,7 +19,7 @@ public class Game_Controller : MonoBehaviour
         playerTwo = GameObject.FindGameObjectWithTag("Player2");
         playerScripts[1] = playerTwo.GetComponent<Player_Two>();
 
-        FindObjectOfType<Audio_Manager>().Play("Crowd_In_Game", 0f);
+        FindObjectOfType<Audio_Manager>().Play("Crowd_In_Game");
     }
 
     private void Update()

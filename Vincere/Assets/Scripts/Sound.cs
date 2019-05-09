@@ -25,6 +25,10 @@ public class Sound
 
     public bool looping;
 
+    [Range(-1f, 1f)]
+    public float stereo;
+
     [HideInInspector]
     public AudioSource source;
+
 }
