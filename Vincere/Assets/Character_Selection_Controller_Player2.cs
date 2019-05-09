@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Character_Selection_Controller_Player1 : MonoBehaviour
+public class Character_Selection_Controller_Player2 : MonoBehaviour
 {
     public Sprite[] portraits;
     public Sprite[] arrows;
@@ -27,10 +27,10 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
         timer += Time.deltaTime;
         if (!selected)
         {
-            pressed = Input.GetButtonDown("Player1_Rotation");
+            pressed = Input.GetButtonDown("Player2_Rotation");
             if (timer > 0.3f)
             {
-                selection = Input.GetAxisRaw("Player1_Rotation");
+                selection = Input.GetAxisRaw("Player2_Rotation");
                 if (selection > 0)
                 {
                     index++;
@@ -60,16 +60,16 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
         else
         {
             if (index == 0)
-                PlayerPrefs.SetString("Player1_Character", "Brutus");
+                PlayerPrefs.SetString("Player2_Character", "Brutus");
             else if (index == 1)
-                PlayerPrefs.SetString("Player1_Character", "Aurelia");
+                PlayerPrefs.SetString("Player2_Character", "Aurelia");
             else if (index == 2)
-                PlayerPrefs.SetString("Player1_Character", "Albus");
+                PlayerPrefs.SetString("Player2_Character", "Albus");
             else if (index == 3)
-                PlayerPrefs.SetString("Player1_Character", "Nubia");
-            if (Input.GetButtonDown("Player1_Rotation") && Input.GetAxisRaw("Player1_Rotation") == 0)
+                PlayerPrefs.SetString("Player2_Character", "Nubia");
+            if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
                 selected = false;
         }
-            
+
     }
 }
