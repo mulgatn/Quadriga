@@ -15,7 +15,7 @@ public class Player_Movement : MonoBehaviour
     public float breakPower;
     public bool breaking;
 
-    private bool boostUsing;
+    public bool boostUsing;
     private bool boostUsed;
     public float speedBoost;
     public float speedBoostAcceleration;
@@ -37,6 +37,8 @@ public class Player_Movement : MonoBehaviour
     private string boost;
 
     private Car_Controller carController;
+
+    public ParticleSystem dust;
 
 
     void Start()
@@ -75,6 +77,9 @@ public class Player_Movement : MonoBehaviour
             rotate = Input.GetAxisRaw("Player2_Rotation");
 
         speedMagnitude = body.velocity.magnitude;
+
+        var emission = dust.emission;
+        emission.rateOverTime = speedMagnitude;
 
         if (isControlled())
             body.freezeRotation = false;

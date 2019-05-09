@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class Player_Collision : MonoBehaviour
 {
-    private Rigidbody2D body;
     public GameObject[] check_Points;
     private Player_Movement movement;
     private Car_Controller carController;
@@ -15,7 +14,6 @@ public class Player_Collision : MonoBehaviour
     public int checkPointCount;
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
         cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
         carController = transform.parent.gameObject.GetComponent<Car_Controller>();
@@ -34,7 +32,7 @@ public class Player_Collision : MonoBehaviour
             movement.BoundCollision();
         }
 
-        if (other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             cam_shaker.magnitude = movement.speedMagnitude / 3f;
             cam_shaker.shakeTimer = cam_shaker.duration;
@@ -46,7 +44,7 @@ public class Player_Collision : MonoBehaviour
         if (other.gameObject.tag == "Bounds")
         {
         }
-        if (other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             if (cam_shaker.shakeTimer == 0f)
             {
@@ -58,7 +56,7 @@ public class Player_Collision : MonoBehaviour
 
     protected void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Bounds" || other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Bounds" || other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             movement.QuitCollision();
         }
@@ -68,12 +66,20 @@ public class Player_Collision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            if (movement.speedMagnitude > 8f)
+            if (carController.playerNumber == 1)
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+            else
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+            if (!movement.boostUsing)
             {
-                cam_shaker.magnitude = movement.speedMagnitude / 2f;
-                cam_shaker.shakeTimer = cam_shaker.duration;
+                if (movement.speedMagnitude > 8f)
+                {
+                    cam_shaker.magnitude = movement.speedMagnitude / 2f;
+                    cam_shaker.shakeTimer = cam_shaker.duration;
+                }
+                movement.obstacleCollision();
             }
-            movement.obstacleCollision();
+
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
         }
         if (other.gameObject == check_Points[checkPointCount])
