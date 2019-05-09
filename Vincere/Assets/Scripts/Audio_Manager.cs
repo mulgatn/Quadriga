@@ -9,17 +9,6 @@ public class Audio_Manager : MonoBehaviour
 
     void Awake()
     {
-        //if (instance == null)
-        //    instance = this;
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
-        //DontDestroyOnLoad(gameObject);
-
-
         foreach(Sound s in sounds)
         {
             if (s.type == Sound.Type.Menu_Sound)
@@ -34,16 +23,16 @@ public class Audio_Manager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.loop = s.looping;
+            s.source.panStereo = s.stereo;
         }
     }
 
-    public void Play(string name, float stereo)
+    public void Play(string name)
     {
         foreach(Sound s in sounds)
         {
             if(s.name == name)
             {
-                s.source.panStereo = stereo;
                 s.source.Play();
             }
         }

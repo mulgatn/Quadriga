@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class Player_Collision : MonoBehaviour
 {
-    private Rigidbody2D body;
     public GameObject[] check_Points;
     private Player_Movement movement;
     private Car_Controller carController;
@@ -15,7 +14,6 @@ public class Player_Collision : MonoBehaviour
     public int checkPointCount;
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
         cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
         carController = transform.parent.gameObject.GetComponent<Car_Controller>();
@@ -68,6 +66,10 @@ public class Player_Collision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            if (carController.playerNumber == 1)
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+            else
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
             if (!movement.boostUsing)
             {
                 if (movement.speedMagnitude > 8f)

@@ -10,7 +10,7 @@ public class Car_Controller : MonoBehaviour
     private bool isActive;
     public bool boostReady;
     public int lapCount;
-    protected int stereoPan;
+    public int stereoPan;
     private Player_Movement movement;
     private GameObject shout_Icon;
 
@@ -20,8 +20,6 @@ public class Car_Controller : MonoBehaviour
         isActive = true;
         movement = GetComponent<Player_Movement>();
         shout_Icon = transform.Find("Shout_Icon").gameObject;
-        if(playerNumber == 1)
-            FindObjectOfType<Audio_Manager>().Play("Player1_Sound", stereoPan);
     }
     protected void Update()
     {

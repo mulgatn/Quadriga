@@ -24,8 +24,8 @@ public class Main_Menu_Controller : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<Audio_Manager>().Play("Main_Menu", 0f);
-        FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu", 0f);
+        FindObjectOfType<Audio_Manager>().Play("Main_Menu");
+        FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu");
 
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
