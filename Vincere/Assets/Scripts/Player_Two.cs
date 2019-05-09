@@ -7,5 +7,6 @@ public class Player_Two : Car_Controller
     void Awake()
     {
         playerNumber = 2;
+        stereoPan = 1;
     }
 }
