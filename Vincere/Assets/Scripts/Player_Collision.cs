@@ -34,7 +34,7 @@ public class Player_Collision : MonoBehaviour
             movement.BoundCollision();
         }
 
-        if (other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             cam_shaker.magnitude = movement.speedMagnitude / 3f;
             cam_shaker.shakeTimer = cam_shaker.duration;
@@ -46,7 +46,7 @@ public class Player_Collision : MonoBehaviour
         if (other.gameObject.tag == "Bounds")
         {
         }
-        if (other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             if (cam_shaker.shakeTimer == 0f)
             {
@@ -58,7 +58,7 @@ public class Player_Collision : MonoBehaviour
 
     protected void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Bounds" || other.gameObject.tag == "Player1_Horses" || other.gameObject.tag == "Player2_Horses")
+        if (other.gameObject.tag == "Bounds" || other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
             movement.QuitCollision();
         }
