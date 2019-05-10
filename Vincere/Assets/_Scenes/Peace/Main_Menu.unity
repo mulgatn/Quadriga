@@ -1142,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 4706605267243229291, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5359352
+      value: 4.9895988
       objectReference: {fileID: 0}
     - target: {fileID: 4706605267243229291, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
         type: 3}
@@ -1202,6 +1202,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SoftZoneWidth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706605267034077531, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
+        type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706605267034077531, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
+        type: 3}
+      propertyPath: m_BiasY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706605267034077531, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
+        type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706605267034077531, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
+        type: 3}
+      propertyPath: m_ScreenY
+      value: 0.73099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706605267034077531, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e,
+        type: 3}
+      propertyPath: m_SoftZoneHeight
+      value: 0.529
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c2cc24d7c7fd2448e4b6fcd6cc0a3e, type: 3}
@@ -1511,7 +1536,7 @@ PrefabInstance:
     - target: {fileID: 1916318485609018579, guid: 9a4de79cadb161a468334364aa7de10e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5359352
+      value: 4.9895988
       objectReference: {fileID: 0}
     - target: {fileID: 1916318485609018579, guid: 9a4de79cadb161a468334364aa7de10e,
         type: 3}
@@ -1562,6 +1587,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4de79cadb161a468334364aa7de10e, type: 3}
@@ -1642,7 +1677,7 @@ PrefabInstance:
     - target: {fileID: 918414233836218536, guid: 2c160bb31630d6244b28a5b7bd2ae72e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5359352
+      value: 4.989598
       objectReference: {fileID: 0}
     - target: {fileID: 918414233836218536, guid: 2c160bb31630d6244b28a5b7bd2ae72e,
         type: 3}
@@ -2287,7 +2322,7 @@ PrefabInstance:
     - target: {fileID: 2299654348878111606, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5359352
+      value: 4.989598
       objectReference: {fileID: 0}
     - target: {fileID: 2299654348878111606, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
@@ -2353,6 +2388,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SoftZoneWidth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299654349282186088, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_ScreenY
+      value: 0.7309999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299654349282186088, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299654349282186088, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_BiasY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299654349282186088, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_SoftZoneHeight
+      value: 0.529
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
@@ -2608,7 +2663,7 @@ MonoBehaviour:
   addedMiddle1: {x: 100, y: -100}
   addedMiddle2: {x: -100, y: -200}
   addedEnd: {x: 0, y: -500}
-  travelTime: 5
+  travelTime: 2
 --- !u!4 &1537528684
 Transform:
   m_ObjectHideFlags: 0

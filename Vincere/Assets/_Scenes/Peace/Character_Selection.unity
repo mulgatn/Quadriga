@@ -375,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOne: {fileID: 600149537}
   playerTwo: {fileID: 1263857181}
+  waitTime: 2
 --- !u!4 &391798435
 Transform:
   m_ObjectHideFlags: 0
