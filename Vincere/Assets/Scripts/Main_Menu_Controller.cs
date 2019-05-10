@@ -48,8 +48,14 @@ public class Main_Menu_Controller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
+        if(pressedEnter)
+            FindObjectOfType<Audio_Manager>().fadeOut("Crowd_Main_Menu", timer / travelTime);
         if (timer / travelTime > 1f)
+        {
+            FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
             SceneManager.LoadScene("Character_Selection");
+        }
+            
 
     }
 

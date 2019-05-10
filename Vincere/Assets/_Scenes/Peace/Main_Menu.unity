@@ -2608,7 +2608,7 @@ MonoBehaviour:
   addedMiddle1: {x: 100, y: -100}
   addedMiddle2: {x: -100, y: -200}
   addedEnd: {x: 0, y: -500}
-  travelTime: 2
+  travelTime: 5
 --- !u!4 &1537528684
 Transform:
   m_ObjectHideFlags: 0

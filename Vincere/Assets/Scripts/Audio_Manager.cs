@@ -9,6 +9,16 @@ public class Audio_Manager : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+       
+
         foreach(Sound s in sounds)
         {
             if (s.type == Sound.Type.Menu_Sound)
@@ -32,9 +42,31 @@ public class Audio_Manager : MonoBehaviour
         foreach(Sound s in sounds)
         {
             if(s.name == name)
-            {
                 s.source.Play();
-            }
         }
+    }
+    
+    public void Stop(string name)
+    {
+        foreach(Sound s in sounds)
+        {
+            if (s.name == name)
+                s.source.Stop();      
+        }
+    }
+
+    public void fadeOut(string name, float time)
+    {
+        foreach(Sound s in sounds)
+        {
+            if (s.name == name)
+                s.source.volume = Mathf.Lerp(s.volume, 0f, time);
+        }
+    }
+
+    public void ResetSounds()
+    {
+        foreach (Sound s in sounds)
+            s.source.Stop();
     }
 }
