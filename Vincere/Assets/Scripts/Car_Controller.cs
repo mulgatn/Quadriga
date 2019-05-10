@@ -10,9 +10,11 @@ public class Car_Controller : MonoBehaviour
     private bool isActive;
     public bool boostReady;
     public int lapCount;
-    public int stereoPan;
+
+
     private Player_Movement movement;
     private GameObject shout_Icon;
+    public GameObject[] horses;
 
     protected void Start()
     {
