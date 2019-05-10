@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Main_Menu_Controller : MonoBehaviour
 {
-    public Text[] startTexts;
+    public Image[] startTexts;
     public Canvas[] myCanvases;
     private bool pressedEnter;
 
@@ -30,8 +30,7 @@ public class Main_Menu_Controller : MonoBehaviour
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
         middle2 = start + addedMiddle2;
-        end = start + new Vector2(0, -(myCanvases[0].GetComponent<RectTransform>().rect.height));
-        //Debug.Log(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height);
+        end = start + addedEnd;
     }
 
     void Update()
@@ -44,13 +43,13 @@ public class Main_Menu_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
         if (timer / travelTime > 1f)
-            SceneManager.LoadScene("Level_One");
+            SceneManager.LoadScene("Character_Selection");
 
     }
 
     private void StartGame()
     {
-        foreach (Text startText in startTexts)
+        foreach (Image startText in startTexts)
             startText.transform.position = SecondEaseOut(start, middle1, middle2, end, timer / travelTime);
         pressedEnter = true;
     }
