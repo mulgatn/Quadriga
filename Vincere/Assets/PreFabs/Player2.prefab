@@ -5005,7 +5005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMagnitude: 0
   acceleration: 1
-  torquePower: -60
+  torquePower: -75
   maxSpeed: 15
   minSpeed: 0
   breakPower: 15
@@ -5013,7 +5013,7 @@ MonoBehaviour:
   boostUsing: 0
   speedBoost: 15
   speedBoostAcceleration: 2
-  speedBoostDuration: 1.5
+  speedBoostDuration: 1
   rotate: 0
   goingLeft: 0
   goingRight: 0
@@ -5033,6 +5033,7 @@ MonoBehaviour:
   playerNumber: 0
   boostReady: 0
   lapCount: 0
+  stereoPan: 0
 --- !u!1 &7029710501043283345
 GameObject:
   m_ObjectHideFlags: 0
