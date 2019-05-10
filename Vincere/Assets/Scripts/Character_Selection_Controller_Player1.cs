@@ -63,13 +63,13 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
         else
         {
             if (index == 0)
-                PlayerPrefs.SetString("Player1_Character", "Brutus");
+                PlayerPrefs.SetInt("Player1_Character", 0);
             else if (index == 1)
-                PlayerPrefs.SetString("Player1_Character", "Aurelia");
+                PlayerPrefs.SetInt("Player1_Character", 1);
             else if (index == 2)
-                PlayerPrefs.SetString("Player1_Character", "Albus");
+                PlayerPrefs.SetInt("Player1_Character", 2);
             else if (index == 3)
-                PlayerPrefs.SetString("Player1_Character", "Nubia");
+                PlayerPrefs.SetInt("Player1_Character", 3);
             leftArrow.sprite = arrows[0];
             rightArrow.sprite = arrows[0];
 
