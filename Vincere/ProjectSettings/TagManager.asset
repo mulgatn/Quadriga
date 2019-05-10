@@ -23,8 +23,9 @@ TagManager:
   - Player1_Dust
   - Player2_Dust
   - Environment_Sounds
-  - Player_Sounds
   - Menu_Sounds
+  - Player1_Sounds
+  - Player2_Sounds
   layers:
   - Default
   - TransparentFX
