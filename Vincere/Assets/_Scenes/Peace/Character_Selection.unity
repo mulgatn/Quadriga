@@ -559,7 +559,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 38ba45ae3efaa5442bec2b3ef6c75bae, type: 3}
   - {fileID: 21300000, guid: b385d60ade40d3e46a7fb115531f752a, type: 3}
   - {fileID: 21300000, guid: eef131288944f774db3876c124eca7c3, type: 3}
-  selectedPortraits: []
+  selectedPortraits:
+  - {fileID: 21300000, guid: af5804556012d47478042605a627832c, type: 3}
+  - {fileID: 21300000, guid: 6463311e14a0386419a0d4dc094456f4, type: 3}
+  - {fileID: 21300000, guid: a965c217a9795a34fb1317833418d158, type: 3}
+  - {fileID: 21300000, guid: adb2a511953619141a144b7ab92e1e31, type: 3}
   arrows:
   - {fileID: 21300000, guid: 02e9a33eb3bf6cc4bbfc81ceb5b62c45, type: 3}
   - {fileID: 21300000, guid: 504ba6edd57831247bafed9ec277f919, type: 3}
