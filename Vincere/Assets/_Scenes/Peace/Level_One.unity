@@ -2212,11 +2212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2299654348878111604, guid: d672ba7458f992445be484f76b1b52f0,
-        type: 3}
-      propertyPath: m_Name
-      value: CM_Player2
-      objectReference: {fileID: 0}
     - target: {fileID: 2299654348878111605, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: m_LookAt
@@ -2227,6 +2222,11 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 925560439}
+    - target: {fileID: 2299654348878111604, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_Name
+      value: CM_Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 2299654348878111606, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2282,11 +2282,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8318182629213521163, guid: d672ba7458f992445be484f76b1b52f0,
-        type: 3}
-      propertyPath: m_BoundingShape2D
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7394369103728276174, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: player
@@ -2301,6 +2296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotationSpeed
       value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318182629213521163, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8318182629213521163, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
