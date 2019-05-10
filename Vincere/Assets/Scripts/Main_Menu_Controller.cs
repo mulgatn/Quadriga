@@ -22,6 +22,12 @@ public class Main_Menu_Controller : MonoBehaviour
     private float timer;
     public float travelTime;
 
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("Player1_Character", 1);
+        PlayerPrefs.SetInt("Player2_Character", 1);
+    }
+
     private void Start()
     {
         FindObjectOfType<Audio_Manager>().Play("Main_Menu");
