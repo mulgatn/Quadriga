@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Main_Menu_Controller : MonoBehaviour
 {
+    public GameObject audioManager;
+
     public Image[] startTexts;
     public Canvas[] myCanvases;
     private bool pressedEnter;
@@ -26,6 +28,7 @@ public class Main_Menu_Controller : MonoBehaviour
     {
         PlayerPrefs.SetInt("Player1_Character", 1);
         PlayerPrefs.SetInt("Player2_Character", 1);
+        Instantiate(audioManager);
     }
 
     private void Start()
