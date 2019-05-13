@@ -116,10 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae1ba74d58d13d4f84775da04f0bafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnPoint: {x: 7, y: -4}
-  maxSpawnPoint: {x: 15, y: 4}
+  minSpawnPoint: {x: 2.8, y: 37.1}
+  maxSpawnPoint: {x: -3.2, y: 34.2}
   blinkTimer: 0.2
-  waitTime: 5
+  waitTime: 3
   cooldown: 3
 --- !u!61 &1135833548135272618
 BoxCollider2D:
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03288746, y: -0.008223534}
