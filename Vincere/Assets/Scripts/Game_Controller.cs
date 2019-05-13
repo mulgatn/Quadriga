@@ -7,8 +7,11 @@ public class Game_Controller : MonoBehaviour
 {
     private GameObject playerOne;
     private GameObject playerTwo;
-    public Car_Controller[] playerScripts;
-    bool gameOver;
+    private Car_Controller[] playerScripts;
+    public Lap_Counter[] lapHandlers;
+    private bool gameOver;
+    private float timer;
+    private bool raceStarted;
 
     private void Start()
     {
@@ -19,15 +22,33 @@ public class Game_Controller : MonoBehaviour
         playerTwo = GameObject.FindGameObjectWithTag("Player2");
         playerScripts[1] = playerTwo.GetComponent<Player_Two>();
 
-        if(FindObjectOfType<Audio_Manager>())
+        if (FindObjectOfType<Audio_Manager>())
         {
             FindObjectOfType<Audio_Manager>().ResetSounds();
             FindObjectOfType<Audio_Manager>().Play("Crowd_In_Game");
-        }        
-    }
+        }
 
+        foreach (Car_Controller playerScript in playerScripts)
+        {
+            playerScript.setActivity(false);
+        }
+    }
     private void Update()
     {
+        timer += Time.deltaTime;
+        
+        if(timer > 3f && !raceStarted)
+        {
+            foreach (Car_Controller playerScript in playerScripts)
+            {
+                playerScript.setActivity(true);
+            }
+            foreach (Lap_Counter lapHandler in lapHandlers)
+            {
+                lapHandler.nextLap();
+            }
+            raceStarted = true;
+        }
         foreach(Car_Controller playerScript in playerScripts)
         {
             if (playerScript.checkWin())

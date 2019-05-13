@@ -12,6 +12,8 @@ public class Player_Collision : MonoBehaviour
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
     public int checkPointCount;
+
+    public Lap_Counter lapHandler;
     void Start()
     {
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
@@ -99,6 +101,7 @@ public class Player_Collision : MonoBehaviour
                 else
                     carController.boostReady = false;
                 carController.lapCount++;
+                lapHandler.nextLap();
             }         
         }
         
