@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747503147738000263}
   - component: {fileID: 8279095385236463309}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Audience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747503147738000262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.83, y: 0.34, z: -16.18322}
+  m_LocalPosition: {x: 52.83, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 747503149396995884}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 747503148005921748}
   - component: {fileID: 747503148005921770}
   - component: {fileID: 747503148005921749}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 747503148269245370}
   - component: {fileID: 747503148269245368}
   - component: {fileID: 747503148269245371}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 747503148798430016}
   - component: {fileID: 747503148798430022}
   - component: {fileID: 747503148798430017}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 747503149030079699}
   - component: {fileID: 747503149030079697}
   - component: {fileID: 747503149030079696}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 747503149086253377}
   - component: {fileID: 747503149086253383}
   - component: {fileID: 747503149086253382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 747503149396995884}
   - component: {fileID: 747503149396995874}
   - component: {fileID: 747503149396995885}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,13 +665,13 @@ GameObject:
   - component: {fileID: 747503149433986071}
   - component: {fileID: 747503149433986069}
   - component: {fileID: 747503149433986068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &747503149433986071
 Transform:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 747503149612064418}
   - component: {fileID: 747503149612064416}
   - component: {fileID: 747503149612064419}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
