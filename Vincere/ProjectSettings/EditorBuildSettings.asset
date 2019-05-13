@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Peace/Main_Menu.unity
     guid: 04af2cf792e780c4a81dce960373badd
   - enabled: 1
+    path: Assets/_Scenes/Peace/Character_Selection.unity
+    guid: c5be31164a0804640bfc0c395905ad45
+  - enabled: 1
     path: Assets/_Scenes/Peace/Level_One.unity
     guid: bf08e52aeec7777428fe65edeeb9ec47
   - enabled: 1

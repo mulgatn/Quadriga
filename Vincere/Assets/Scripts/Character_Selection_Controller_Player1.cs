@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Character_Selection_Controller_Player1 : MonoBehaviour
 {
     public Sprite[] portraits;
+    public Sprite[] selectedPortraits;
     public Sprite[] arrows;
     public Image portrait;
     public Image leftArrow;
@@ -21,14 +22,13 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
         timer = 1f;
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        timer += Time.deltaTime;
+    {     
         if (!selected)
         {
-            pressed = Input.GetButtonDown("Player1_Rotation");
-            if (timer > 0.3f)
+            timer += Time.deltaTime;
+            portrait.sprite = portraits[index];
+            if (timer > 0.5f)
             {
                 selection = Input.GetAxisRaw("Player1_Rotation");
                 if (selection > 0)
@@ -53,23 +53,33 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
                 if (selection != 0)
                     timer = 0f;
             }
-            portrait.sprite = portraits[index];
-            if (pressed && selection == 0)
+            if (Input.GetButtonDown("Player1_Rotation") && Input.GetAxisRaw("Player1_Rotation") == 0)
+            {
+                leftArrow.sprite = arrows[0];
+                rightArrow.sprite = arrows[0];
                 selected = true;
+            }
         }
         else
         {
             if (index == 0)
-                PlayerPrefs.SetString("Player1_Character", "Brutus");
+                PlayerPrefs.SetInt("Player1_Character", 0);
             else if (index == 1)
-                PlayerPrefs.SetString("Player1_Character", "Aurelia");
+                PlayerPrefs.SetInt("Player1_Character", 1);
             else if (index == 2)
-                PlayerPrefs.SetString("Player1_Character", "Albus");
+                PlayerPrefs.SetInt("Player1_Character", 2);
             else if (index == 3)
-                PlayerPrefs.SetString("Player1_Character", "Nubia");
+                PlayerPrefs.SetInt("Player1_Character", 3);
+            leftArrow.sprite = arrows[0];
+            rightArrow.sprite = arrows[0];
+
+            portrait.sprite = selectedPortraits[index];
+
             if (Input.GetButtonDown("Player1_Rotation") && Input.GetAxisRaw("Player1_Rotation") == 0)
+            {
                 selected = false;
+                timer = 0.3f;
+            }
         }
-            
     }
 }

@@ -28,7 +28,7 @@ public class Sound
     [Range(-1f, 1f)]
     public float stereo;
 
-    [HideInInspector]
+    //[HideInInspector]
     public AudioSource source;
 
 }
