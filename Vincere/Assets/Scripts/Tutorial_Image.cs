@@ -23,7 +23,7 @@ public class Tutorial_Image : MonoBehaviour
 
         if(timer > animationSpeed)
         {
-            if (index == 2)
+            if (index == sprites.Length)
                 index = 0;
             spriteRenderer.sprite = sprites[index];
             index++;

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Main_Menu_Controller : MonoBehaviour
 {
-    public Text[] startTexts;
+    public GameObject audioManager;
+
+    public Image[] startTexts;
     public Canvas[] myCanvases;
     private bool pressedEnter;
 
@@ -22,13 +24,22 @@ public class Main_Menu_Controller : MonoBehaviour
     private float timer;
     public float travelTime;
 
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("Player1_Character", 1);
+        PlayerPrefs.SetInt("Player2_Character", 1);
+        Instantiate(audioManager);
+    }
+
     private void Start()
     {
+        FindObjectOfType<Audio_Manager>().Play("Main_Menu");
+        FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu");
+
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
         middle2 = start + addedMiddle2;
-        end = start + new Vector2(0, -(myCanvases[0].GetComponent<RectTransform>().rect.height));
-        //Debug.Log(myCanvases[0].GetComponent<RectTransform>().rect.height + startTexts[0].GetComponent<RectTransform>().rect.height);
+        end = start + addedEnd;
     }
 
     void Update()
@@ -40,14 +51,20 @@ public class Main_Menu_Controller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
+        if(pressedEnter)
+            FindObjectOfType<Audio_Manager>().fadeOut("Crowd_Main_Menu", timer / travelTime);
         if (timer / travelTime > 1f)
-            SceneManager.LoadScene("Level_One");
+        {
+            FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
+            SceneManager.LoadScene("Character_Selection");
+        }
+            
 
     }
 
     private void StartGame()
     {
-        foreach (Text startText in startTexts)
+        foreach (Image startText in startTexts)
             startText.transform.position = SecondEaseOut(start, middle1, middle2, end, timer / travelTime);
         pressedEnter = true;
     }

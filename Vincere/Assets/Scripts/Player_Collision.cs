@@ -5,32 +5,23 @@ using Cinemachine;
 
 public class Player_Collision : MonoBehaviour
 {
-    private Rigidbody2D body;
     public GameObject[] check_Points;
     private Player_Movement movement;
+    private Car_Controller carController;
+    public Car_Controller otherPlayer;
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
     public int checkPointCount;
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        movement = GetComponent<Player_Movement>();
-        cam_shaker = GetComponent<Camera_Shake>();
+        movement = transform.parent.gameObject.GetComponent<Player_Movement>();
+        cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
+        carController = transform.parent.gameObject.GetComponent<Car_Controller>();
         checkPointCount = 0;
     }
 
     protected void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Obstacle")
-        {
-            if (movement.speedMagnitude > 8f)
-            {
-                cam_shaker.magnitude = movement.speedMagnitude / 2f;
-                cam_shaker.shakeTimer = cam_shaker.duration;
-            }
-            movement.obstacleCollision();
-            other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
-        }
+    {    
         if (other.gameObject.tag == "Bounds")
         {
             if (movement.speedMagnitude > 7f)
@@ -73,14 +64,37 @@ public class Player_Collision : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == check_Points[checkPointCount])
+        if (other.gameObject.tag == "Obstacle")
+        {
+            if (carController.playerNumber == 1)
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+            else
+                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+            if (!movement.boostUsing)
+            {
+                if (movement.speedMagnitude > 8f)
+                {
+                    cam_shaker.magnitude = movement.speedMagnitude / 2f;
+                    cam_shaker.shakeTimer = cam_shaker.duration;
+                }
+                movement.obstacleCollision();
+            }
+
+            other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
+        }
+        if (other.gameObject == check_Points[checkPointCount])
         {
             checkPointCount++;
             if (checkPointCount == check_Points.Length)
             {
                 checkPointCount = 0;
-                GetComponent<Car_Controller>().lapCount++;
+                if (otherPlayer.lapCount > carController.lapCount)
+                    carController.boostReady = true;
+                else
+                    carController.boostReady = false;
+                carController.lapCount++;
             }         
         }
+        
     }
 }

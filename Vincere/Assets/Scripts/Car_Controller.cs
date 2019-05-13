@@ -8,21 +8,30 @@ public class Car_Controller : MonoBehaviour
     public int playerNumber;
     protected bool isWon;
     private bool isActive;
+    public bool boostReady;
     public int lapCount;
+
+
     private Player_Movement movement;
+    private GameObject shout_Icon;
+    public GameObject[] horses;
 
     protected void Start()
     {
         isWon = false;
         isActive = true;
         movement = GetComponent<Player_Movement>();
-
+        shout_Icon = transform.Find("Shout_Icon").gameObject;
     }
     protected void Update()
     {
          if (isActive)
          {
-             movement.check();
+            if (boostReady)
+                shout_Icon.SetActive(true);
+            else
+                shout_Icon.SetActive(false);
+            movement.check();
             if (lapCount == 3)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);
