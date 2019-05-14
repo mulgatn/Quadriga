@@ -10,8 +10,12 @@ public class Car_Controller : MonoBehaviour
     private bool isActive;
     public bool boostReady;
     public int lapCount;
+
+
     private Player_Movement movement;
     private GameObject shout_Icon;
+    public GameObject[] horses;
+
 
     protected void Start()
     {
@@ -29,7 +33,6 @@ public class Car_Controller : MonoBehaviour
             else
                 shout_Icon.SetActive(false);
             movement.check();
-            Debug.Log(playerNumber + " = Speed Boost " + boostReady);
             if (lapCount == 3)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);
