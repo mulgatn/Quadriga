@@ -5179,6 +5179,7 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   cam: {fileID: 0}
   checkPointCount: 0
+  lapHandler: {fileID: 0}
 --- !u!1 &8166055673325492235
 GameObject:
   m_ObjectHideFlags: 0
