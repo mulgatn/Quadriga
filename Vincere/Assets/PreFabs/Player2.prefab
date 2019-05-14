@@ -5036,7 +5036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMagnitude: 0
   acceleration: 1
-  torquePower: -75
+  torquePower: -65
   maxSpeed: 15
   minSpeed: 0
   breakPower: 15
@@ -5044,7 +5044,7 @@ MonoBehaviour:
   boostUsing: 0
   speedBoost: 15
   speedBoostAcceleration: 2
-  speedBoostDuration: 1
+  speedBoostDuration: 1.5
   rotate: 0
   goingLeft: 0
   goingRight: 0
