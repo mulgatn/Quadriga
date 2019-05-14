@@ -21,7 +21,9 @@ public class End_Game_Controller : MonoBehaviour
             playerOneText.text = playerOneText.text + " Lost...";
             playerTwoText.text = playerTwoText.text + " Won!";
         }
-        
+
+        if (FindObjectOfType<Audio_Manager>())
+            FindObjectOfType<Audio_Manager>().ResetSounds();
     }
 
     private void Update()

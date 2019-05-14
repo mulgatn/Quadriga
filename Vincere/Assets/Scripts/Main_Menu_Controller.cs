@@ -28,15 +28,15 @@ public class Main_Menu_Controller : MonoBehaviour
     {
         PlayerPrefs.SetInt("Player1_Character", 1);
         PlayerPrefs.SetInt("Player2_Character", 1);
-        if (FindObjectOfType<Audio_Manager>())
-            Destroy(FindObjectOfType<Audio_Manager>());
-        Instantiate(audioManager);
+        if (!FindObjectOfType<Audio_Manager>())
+            Instantiate(audioManager);
     }
 
     private void Start()
     {
         if (FindObjectOfType<Audio_Manager>())
         {
+            FindObjectOfType<Audio_Manager>().ResetSounds();
             FindObjectOfType<Audio_Manager>().Play("Main_Menu");
             FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu");
         }
