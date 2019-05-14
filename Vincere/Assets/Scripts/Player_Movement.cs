@@ -139,12 +139,12 @@ public class Player_Movement : MonoBehaviour
         {
             if (goingRight)
             {
-                Vector2 temp = transform.right * 3f;
+                Vector2 temp = transform.right * body.velocity.magnitude / 3.5f;
                 body.velocity = body.velocity + temp;
             }
             else
             {
-                Vector2 temp = -transform.right * 3f;
+                Vector2 temp = -transform.right * body.velocity.magnitude / 3.5f;
                 body.velocity = body.velocity + temp;
             }
         }

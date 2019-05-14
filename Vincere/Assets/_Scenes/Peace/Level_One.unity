@@ -54485,11 +54485,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 3690206821689499226, guid: 6e0ea5f3a6659ea419caff32cd615c6d,
-        type: 3}
-      propertyPath: lapHandler
-      value: 
-      objectReference: {fileID: 1272372865}
     - target: {fileID: 3690206821689499224, guid: 6e0ea5f3a6659ea419caff32cd615c6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54721,11 +54716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 7368098412397647642, guid: e44136b27d768554f94c7dc28b49c32b,
-        type: 3}
-      propertyPath: lapHandler
-      value: 
-      objectReference: {fileID: 524703349}
     - target: {fileID: 7368098412397647643, guid: e44136b27d768554f94c7dc28b49c32b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54861,5 +54851,15 @@ PrefabInstance:
       propertyPath: lapHandler
       value: 
       objectReference: {fileID: 524703349}
+    - target: {fileID: 5242633816756765767, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: torquePower
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242633816756765767, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: speedBoostDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44136b27d768554f94c7dc28b49c32b, type: 3}
