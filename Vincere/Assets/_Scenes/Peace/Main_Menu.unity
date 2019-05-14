@@ -1528,21 +1528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1_Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
-        type: 3}
-      propertyPath: orthographic size
-      value: 10.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
-        type: 3}
-      propertyPath: far clip plane
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 1916318485609018579, guid: 9a4de79cadb161a468334364aa7de10e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1597,6 +1582,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: orthographic size
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4de79cadb161a468334364aa7de10e, type: 3}

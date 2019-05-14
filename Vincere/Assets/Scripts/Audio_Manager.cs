@@ -67,6 +67,10 @@ public class Audio_Manager : MonoBehaviour
     public void ResetSounds()
     {
         foreach (Sound s in sounds)
+        {
             s.source.Stop();
+            s.source.volume = s.volume;
+        }
+            
     }
 }
