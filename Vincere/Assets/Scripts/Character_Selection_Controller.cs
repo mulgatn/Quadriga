@@ -10,17 +10,19 @@ public class Character_Selection_Controller : MonoBehaviour
     private float timer;
     public float waitTime;
 
+    private void Start()
+    {
+        if (FindObjectOfType<Audio_Manager>())
+            FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
+    }
+
     private void Update()
     {
         if (playerOne.selected && playerTwo.selected)
         {
             timer += Time.deltaTime;
             if (timer > waitTime)
-            {
-                SceneManager.LoadScene("Level_One");
-                FindObjectOfType<Audio_Manager>().ResetSounds();
-            }
-                
+                SceneManager.LoadScene("Level_One");        
         }
         else
             timer = 0;
