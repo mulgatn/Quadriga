@@ -180,9 +180,12 @@ public class Player_Movement : MonoBehaviour
             maxSpeed = 15f;
     }
 
-    public void obstacleCollision()
+    public void obstacleCollision(int obstacleID)
     {
-        body.velocity /= 2f;
+        if (obstacleID == 0)
+            body.velocity /= 2f;
+        else if (obstacleID == 1)
+            body.velocity /= 1.5f;
         body.angularVelocity = 0;
     }
 
