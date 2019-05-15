@@ -85,7 +85,7 @@ public class Player_Collision : MonoBehaviour
                     cam_shaker.magnitude = movement.speedMagnitude / 2f;
                     cam_shaker.shakeTimer = cam_shaker.duration;
                 }
-                movement.obstacleCollision();
+                movement.obstacleCollision(other.gameObject.GetComponent<Animator>().GetInteger("Obstacle_Identifier"));
             }
 
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);

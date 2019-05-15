@@ -20,6 +20,7 @@ public class Obstacle_Handler : MonoBehaviour
             {
                 o.reSpawn();
                 o.gameObject.SetActive(true);
+                o.gameObject.GetComponent<Animator>().SetInteger("Obstacle_Identifier", Random.Range(0, 2));
             }
 
         }
