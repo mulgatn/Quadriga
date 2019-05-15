@@ -15,6 +15,7 @@ public class Car_Controller : MonoBehaviour
     private Player_Movement movement;
     private GameObject shout_Icon;
     public GameObject[] horses;
+    public GameObject[] chariots;
 
 
     protected void Start()
@@ -33,7 +34,7 @@ public class Car_Controller : MonoBehaviour
             else
                 shout_Icon.SetActive(false);
             movement.check();
-            if (lapCount == 3)
+            if (lapCount == 7)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);
                 isWon = true;
