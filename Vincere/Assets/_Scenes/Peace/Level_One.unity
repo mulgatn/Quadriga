@@ -102809,5 +102809,10 @@ PrefabInstance:
       propertyPath: lapHandler
       value: 
       objectReference: {fileID: 524703349}
+    - target: {fileID: 2653266878444033247, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44136b27d768554f94c7dc28b49c32b, type: 3}

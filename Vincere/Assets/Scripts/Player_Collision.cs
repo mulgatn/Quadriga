@@ -12,6 +12,7 @@ public class Player_Collision : MonoBehaviour
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
     public int checkPointCount;
+    private int obstacleID;
 
     public Lap_Counter lapHandler;
     void Start()
@@ -68,15 +69,27 @@ public class Player_Collision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            obstacleID = other.gameObject.GetComponent<Animator>().GetInteger("Obstacle_Identifier");
             if (carController.playerNumber == 1)
             {
                 if (FindObjectOfType<Audio_Manager>())
-                    FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+                {
+                    if(obstacleID == 0)
+                        FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+                    else
+                        FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player1");
+                }
+                    
             }
             else
             {
                 if (FindObjectOfType<Audio_Manager>())
-                    FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+                {
+                    if (obstacleID == 0)
+                        FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+                    else
+                        FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player2");
+                }
             }
             if (!movement.boostUsing)
             {
@@ -85,7 +98,8 @@ public class Player_Collision : MonoBehaviour
                     cam_shaker.magnitude = movement.speedMagnitude / 2f;
                     cam_shaker.shakeTimer = cam_shaker.duration;
                 }
-                movement.obstacleCollision();
+
+                movement.obstacleCollision(obstacleID);
             }
 
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
