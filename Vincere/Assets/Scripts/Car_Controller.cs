@@ -34,7 +34,7 @@ public class Car_Controller : MonoBehaviour
             else
                 shout_Icon.SetActive(false);
             movement.check();
-            if (lapCount == 1)
+            if (lapCount == 7)
             {
                 PlayerPrefs.SetInt("Winner", playerNumber);
                 isWon = true;
