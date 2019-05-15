@@ -88,6 +88,22 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+    name: Cushion_Rip_Player1
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+    name: Cushion_Rip_Player2
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:
   m_ObjectHideFlags: 0
