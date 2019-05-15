@@ -28,13 +28,18 @@ public class Main_Menu_Controller : MonoBehaviour
     {
         PlayerPrefs.SetInt("Player1_Character", 1);
         PlayerPrefs.SetInt("Player2_Character", 1);
-        Instantiate(audioManager);
+        if (!FindObjectOfType<Audio_Manager>())
+            Instantiate(audioManager);
     }
 
     private void Start()
     {
-        FindObjectOfType<Audio_Manager>().Play("Main_Menu");
-        FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu");
+        if (FindObjectOfType<Audio_Manager>())
+        {
+            FindObjectOfType<Audio_Manager>().ResetSounds();
+            FindObjectOfType<Audio_Manager>().Play("Main_Menu");
+            FindObjectOfType<Audio_Manager>().Play("Crowd_Main_Menu");
+        }
 
         start = startTexts[0].transform.position;
         middle1 = start + addedMiddle1;
@@ -52,10 +57,10 @@ public class Main_Menu_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
         if(pressedEnter)
-            FindObjectOfType<Audio_Manager>().fadeOut("Crowd_Main_Menu", timer / travelTime);
+            if (FindObjectOfType<Audio_Manager>())
+                FindObjectOfType<Audio_Manager>().fadeOut("Crowd_Main_Menu", timer / travelTime);
         if (timer / travelTime > 1f)
         {
-            FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
             SceneManager.LoadScene("Character_Selection");
         }
             

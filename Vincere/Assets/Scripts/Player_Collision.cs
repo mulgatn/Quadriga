@@ -12,6 +12,8 @@ public class Player_Collision : MonoBehaviour
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
     public int checkPointCount;
+
+    public Lap_Counter lapHandler;
     void Start()
     {
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
@@ -67,9 +69,15 @@ public class Player_Collision : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             if (carController.playerNumber == 1)
-                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+            {
+                if (FindObjectOfType<Audio_Manager>())
+                    FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
+            }
             else
-                FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+            {
+                if (FindObjectOfType<Audio_Manager>())
+                    FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
+            }
             if (!movement.boostUsing)
             {
                 if (movement.speedMagnitude > 8f)
@@ -93,6 +101,7 @@ public class Player_Collision : MonoBehaviour
                 else
                     carController.boostReady = false;
                 carController.lapCount++;
+                lapHandler.nextLap();
             }         
         }
         
