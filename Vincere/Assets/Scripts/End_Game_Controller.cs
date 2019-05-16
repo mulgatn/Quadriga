@@ -6,24 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class End_Game_Controller : MonoBehaviour
 {
-    public Text playerOneText;
-    public Text playerTwoText;
+    public Sprite[] playerOneWin;
+    public Sprite[] playerOneLose;
+    public Sprite[] playerTwoWin;
+    public Sprite[] playerTwoLose;
+    public Image playerOne;
+    public Image playerTwo;
 
     private void Start()
     {
-       if(PlayerPrefs.GetInt("Winner") == 1)
+        if (FindObjectOfType<Audio_Manager>())
+            FindObjectOfType<Audio_Manager>().ResetSounds();
+        if(PlayerPrefs.GetInt("Winner") == 1)
         {
-            playerOneText.text = playerOneText.text +  " Won!";
-            playerTwoText.text = playerTwoText.text + " Lost...";
+            playerOne.sprite = playerOneWin[PlayerPrefs.GetInt("Player1_Character")];
+            playerTwo.sprite = playerTwoLose[PlayerPrefs.GetInt("Player2_Character")];
         }
         else
         {
-            playerOneText.text = playerOneText.text + " Lost...";
-            playerTwoText.text = playerTwoText.text + " Won!";
+            playerOne.sprite = playerOneLose[PlayerPrefs.GetInt("Player1_Character")];
+            playerTwo.sprite = playerTwoWin[PlayerPrefs.GetInt("Player2_Character")];
         }
-
-        if (FindObjectOfType<Audio_Manager>())
-            FindObjectOfType<Audio_Manager>().ResetSounds();
     }
 
     private void Update()
