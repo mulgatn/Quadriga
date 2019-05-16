@@ -14,16 +14,20 @@ public class Obstacle : MonoBehaviour
     private new BoxCollider2D collider;
     private new Renderer renderer;
     private Animator animator;
+    public int obstacleID;
 
     private void Awake()
     {
         collider = GetComponent<BoxCollider2D>();
         renderer = GetComponent<Renderer>();
         animator = GetComponent<Animator>();
+        obstacleID = Random.Range(0, 2);
+        animator.SetInteger("Obstacle_Identifier", obstacleID);
     }
 
     private void Update()
     {
+        obstacleID = Random.Range(0, 2);
         timer += Time.deltaTime;
         waitTimer += Time.deltaTime;
         if(!animator.GetBool("Broken"))
@@ -55,7 +59,7 @@ public class Obstacle : MonoBehaviour
 
     public void reSpawn()
     {
-        transform.position = getRandomSpawn();
+        transform.position = getRandomSpawn();;
         transform.eulerAngles = getRandomRotation();
         timer = 0;
         waitTimer = 0; 
