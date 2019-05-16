@@ -46,7 +46,7 @@ public class Player_Movement : MonoBehaviour
         carController = GetComponent<Car_Controller>();
         body = GetComponent<Rigidbody2D>();
         breaking = false;
-        body.velocity = transform.up * acceleration;
+        speedMagnitude += acceleration;
         if (carController.playerNumber == 1)
         {
             turnLeft = KeyCode.A;
