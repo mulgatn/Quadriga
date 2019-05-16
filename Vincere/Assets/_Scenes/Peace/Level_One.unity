@@ -89404,7 +89404,7 @@ SpriteRenderer:
   m_SortingLayerID: 389478407
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1daf1b2efe3d1b9489d55fb36d22d023, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5db12af0da4b9e4996b86ee9dd3dac7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102734,6 +102734,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 689140244}
+    - target: {fileID: 2653266878444033247, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1038321385610915099, guid: e44136b27d768554f94c7dc28b49c32b,
         type: 3}
       propertyPath: check_Points.Array.data[0]
@@ -102809,10 +102814,5 @@ PrefabInstance:
       propertyPath: lapHandler
       value: 
       objectReference: {fileID: 524703349}
-    - target: {fileID: 2653266878444033247, guid: e44136b27d768554f94c7dc28b49c32b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44136b27d768554f94c7dc28b49c32b, type: 3}
