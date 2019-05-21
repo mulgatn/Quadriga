@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //[RequireComponent] Player_Movement
 public class Car_Controller : MonoBehaviour
@@ -10,12 +12,16 @@ public class Car_Controller : MonoBehaviour
     private bool isActive;
     public bool boostReady;
     public int lapCount;
+    [HideInInspector]
+    public int position;
 
 
     private Player_Movement movement;
     private GameObject shout_Icon;
     public GameObject[] horses;
     public GameObject[] chariots;
+    public Image positionID;
+    public Sprite[] posSprites;
 
 
     protected void Start()
@@ -29,6 +35,8 @@ public class Car_Controller : MonoBehaviour
     {
          if (isActive)
          {
+            if(SceneManager.GetActiveScene().name == "Level_One")
+                positionID.sprite = posSprites[position];
             if (boostReady)
                 shout_Icon.SetActive(true);
             else
