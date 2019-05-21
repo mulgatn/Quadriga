@@ -11,7 +11,8 @@ public class Player_Collision : MonoBehaviour
     public Car_Controller otherPlayer;
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
-    public int checkPointCount;
+    private int lapCheckPointCount;
+    public int totalCheckPointCount;
     private int obstacleID;
 
     public Lap_Counter lapHandler;
@@ -20,7 +21,8 @@ public class Player_Collision : MonoBehaviour
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
         cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
         carController = transform.parent.gameObject.GetComponent<Car_Controller>();
-        checkPointCount = 0;
+        lapCheckPointCount = 0;
+        totalCheckPointCount = 0;
     }
 
     protected void OnCollisionEnter2D(Collision2D other)
@@ -104,12 +106,20 @@ public class Player_Collision : MonoBehaviour
 
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
         }
-        if (other.gameObject == check_Points[checkPointCount])
+        if (other.gameObject == check_Points[lapCheckPointCount])
         {
-            checkPointCount++;
-            if (checkPointCount == check_Points.Length)
+            lapCheckPointCount++;
+            totalCheckPointCount++;
+            if (totalCheckPointCount > otherPlayer.transform.Find("Horses").GetComponent<Player_Collision>().totalCheckPointCount)
             {
-                checkPointCount = 0;
+                carController.position = 0;
+                otherPlayer.position = 1;
+            }
+                
+
+            if (lapCheckPointCount == check_Points.Length)
+            {
+                    lapCheckPointCount = 0;
                 if (otherPlayer.lapCount > carController.lapCount)
                     carController.boostReady = true;
                 else
