@@ -22,7 +22,6 @@ public class Lap_Counter : MonoBehaviour
         currentLap = laps[0];
         inScene = transform.position;
         outScene = new Vector2(inScene.x - 375f, inScene.y);
-        Debug.Log(transform.position);
         transform.position = outScene;
     }
 
@@ -54,6 +53,8 @@ public class Lap_Counter : MonoBehaviour
             {
                 if (goingOut)
                     lapIndicator++;
+                if (lapIndicator == 7)
+                    lapIndicator = 6;
                 goingIn = false;
                 goingOut = false;
                 time = 0f;
