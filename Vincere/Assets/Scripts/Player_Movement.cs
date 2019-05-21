@@ -86,9 +86,7 @@ public class Player_Movement : MonoBehaviour
         else
             body.freezeRotation = true;
 
-        if (rotate != 0f)
-            if (speedMagnitude == minSpeed)
-                speedMagnitude += acceleration;
+        
         if (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt))
             goingLeft = true;
         else
@@ -97,6 +95,10 @@ public class Player_Movement : MonoBehaviour
             goingRight = true;
         else
             goingRight = false;
+
+        if (rotate != 0f)
+            if (speedMagnitude == minSpeed)
+                speedMagnitude += acceleration;
 
         if ((Input.GetKey(turnLeft) || Input.GetKey(turnLeftAlt)) && (Input.GetKey(turnRight) || Input.GetKey(turnRightAlt)))
         {
@@ -130,11 +132,17 @@ public class Player_Movement : MonoBehaviour
 
     public void Movement()
     {
+        Vector2 tmp = Vector2.zero;
         if (!breaking)
             body.angularVelocity = (rotate * torquePower);
         if (speedMagnitude < maxSpeed && speedMagnitude != minSpeed)
+        {
+            tmp = body.velocity;
             body.AddForce(transform.up * acceleration * maxSpeed);
+        }
+        tmp = body.velocity;
         body.velocity = ForwardVelocity();
+        tmp = body.velocity;
         if (goingRight || goingLeft)
         {
             if (goingRight)
@@ -148,6 +156,8 @@ public class Player_Movement : MonoBehaviour
                 body.velocity = body.velocity + temp;
             }
         }
+
+
         if (boostUsing && !breaking)
             speedUp();
     }
