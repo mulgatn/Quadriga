@@ -26,6 +26,7 @@ TagManager:
   - Menu_Sounds
   - Player1_Sounds
   - Player2_Sounds
+  - Horses
   layers:
   - Default
   - TransparentFX

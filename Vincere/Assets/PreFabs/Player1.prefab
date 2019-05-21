@@ -5444,6 +5444,7 @@ MonoBehaviour:
   playerNumber: 0
   boostReady: 0
   lapCount: 0
+  position: 0
   horses:
   - {fileID: 5068057510786202769}
   - {fileID: 9073462936921430128}
@@ -5454,6 +5455,10 @@ MonoBehaviour:
   - {fileID: 1142103963826621988}
   - {fileID: 5619794291167003987}
   - {fileID: 5273914634597227650}
+  positionID: {fileID: 0}
+  posSprites:
+  - {fileID: 21300000, guid: 5bbfcd35891ce3b49ab0f0d19d60e97f, type: 3}
+  - {fileID: 21300000, guid: 2bbacd54dd5bbae428a78c959642ce28, type: 3}
 --- !u!1 &7387918031667556866
 GameObject:
   m_ObjectHideFlags: 0
@@ -5576,6 +5581,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
