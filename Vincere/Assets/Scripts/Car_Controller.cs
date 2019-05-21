@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //[RequireComponent] Player_Movement
 public class Car_Controller : MonoBehaviour
@@ -34,7 +35,8 @@ public class Car_Controller : MonoBehaviour
     {
          if (isActive)
          {
-            positionID.sprite = posSprites[position];
+            if(SceneManager.GetActiveScene().name == "Level_One")
+                positionID.sprite = posSprites[position];
             if (boostReady)
                 shout_Icon.SetActive(true);
             else
