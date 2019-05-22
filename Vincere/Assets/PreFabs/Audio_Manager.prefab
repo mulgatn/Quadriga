@@ -104,6 +104,30 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 16192fc071e531e46a4af45f3027a554, type: 3}
+    name: Player_Player_Collision
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 40e731298061ff64bae77e9b39701424, type: 3}
+    name: Player1_Wall
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 16192fc071e531e46a4af45f3027a554, type: 3}
+    name: Player_Player_Collision
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:
   m_ObjectHideFlags: 0

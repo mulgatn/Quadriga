@@ -104085,11 +104085,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2299654348878111604, guid: d672ba7458f992445be484f76b1b52f0,
-        type: 3}
-      propertyPath: m_Name
-      value: CM_Player2
-      objectReference: {fileID: 0}
     - target: {fileID: 2299654348878111605, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: m_LookAt
@@ -104100,6 +104095,11 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 925560439}
+    - target: {fileID: 2299654348878111604, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_Name
+      value: CM_Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 2299654348878111606, guid: d672ba7458f992445be484f76b1b52f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -104160,6 +104160,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 925560439}
+    - target: {fileID: 2299654349282186088, guid: d672ba7458f992445be484f76b1b52f0,
+        type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
 --- !u!114 &2299654348878111607 stripped
@@ -104866,6 +104871,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Horses
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242633816756765767, guid: e44136b27d768554f94c7dc28b49c32b,
+        type: 3}
+      propertyPath: torquePower
+      value: -65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44136b27d768554f94c7dc28b49c32b, type: 3}
