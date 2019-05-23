@@ -38,7 +38,7 @@ public class Player_Collision : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
-        {
+        {    
             cam_shaker.magnitude = movement.speedMagnitude / 3f;
             cam_shaker.shakeTimer = cam_shaker.duration;
             movement.playerCollision();
