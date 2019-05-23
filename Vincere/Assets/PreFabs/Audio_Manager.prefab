@@ -280,6 +280,22 @@ MonoBehaviour:
     looping: 0
     stereo: 0
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 39847ad8f77e2b4428ef5083a63bef02, type: 3}
+    name: Horse_clop_loud
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 8119705f17bf01a4a9326cfc8c2098f2, type: 3}
+    name: Player_to_wall_loud
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 0
+    source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:
   m_ObjectHideFlags: 0
