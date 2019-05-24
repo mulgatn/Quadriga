@@ -4938,7 +4938,7 @@ GameObject:
   - component: {fileID: 733613065168692181}
   m_Layer: 0
   m_Name: Horses
-  m_TagString: Player2_Horses
+  m_TagString: Horses
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5082,7 +5082,7 @@ MonoBehaviour:
   - {fileID: 0}
   otherPlayer: {fileID: 0}
   cam: {fileID: 2299654348878111605, guid: d672ba7458f992445be484f76b1b52f0, type: 3}
-  checkPointCount: 0
+  totalCheckPointCount: 0
   lapHandler: {fileID: 0}
 --- !u!1 &2149398944319609162
 GameObject:
@@ -5525,7 +5525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMagnitude: 0
   acceleration: 1
-  torquePower: -65
+  torquePower: -62
   maxSpeed: 15
   minSpeed: 0
   breakPower: 15
@@ -5566,8 +5566,8 @@ MonoBehaviour:
   - {fileID: 8296418598894142122}
   positionID: {fileID: 0}
   posSprites:
-  - {fileID: 21300000, guid: 5bbfcd35891ce3b49ab0f0d19d60e97f, type: 3}
-  - {fileID: 21300000, guid: 2bbacd54dd5bbae428a78c959642ce28, type: 3}
+  - {fileID: 21300000, guid: d3483191c47457b40b39dde208a97ca5, type: 3}
+  - {fileID: 21300000, guid: 62a4c0fe84a4b3340a8170f5fa0ee928, type: 3}
 --- !u!1 &5897475287960691107
 GameObject:
   m_ObjectHideFlags: 0
