@@ -75,11 +75,21 @@ public class Game_Controller : MonoBehaviour
             }
         }
         if (gameOver)
-            SceneManager.LoadScene("End_Screen");
+            StartCoroutine(endGame());
         if (Input.GetKey(KeyCode.R))
             SceneManager.LoadScene("Level_One");
         if (Input.GetKey(KeyCode.E))
             SceneManager.LoadScene("Main_Menu");
+    }
+
+    IEnumerator endGame()
+    {
+        foreach (Car_Controller playerScript in playerScripts)
+        {
+            playerScript.setActivity(false);
+        }
+        yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("End_Screen");
     }
 }
  
