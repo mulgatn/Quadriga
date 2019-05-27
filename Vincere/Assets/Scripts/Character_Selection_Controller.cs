@@ -22,7 +22,7 @@ public class Character_Selection_Controller : MonoBehaviour
         {
             timer += Time.deltaTime;
             if (timer > waitTime)
-                SceneManager.LoadScene("Level_One");        
+                SceneManager.LoadScene("Loading");        
         }
         else
             timer = 0;

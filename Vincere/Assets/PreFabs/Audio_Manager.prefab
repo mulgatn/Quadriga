@@ -408,6 +408,38 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
+    name: Player1_Speed_Boost
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
+    name: Player2_Speed_Boost
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
+    name: Player1_Wall
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
+    name: Player2_Wall
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:
   m_ObjectHideFlags: 0
