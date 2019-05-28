@@ -86,13 +86,14 @@ public class Player_Movement : MonoBehaviour
         
         if (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt))
             goingLeft = true;
+            
         else
             goingLeft = false;
         if (Input.GetKey(goRight) || Input.GetKey(goRightAlt))
             goingRight = true;
         else
             goingRight = false;
-        if((Input.GetKey(goRight) || Input.GetKey(goLeftAlt)) && (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt)))
+        if((Input.GetKey(goRight) || Input.GetKey(goRightAlt)) && (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt)))
         {
             goingLeft = false;
             goingRight = false;
