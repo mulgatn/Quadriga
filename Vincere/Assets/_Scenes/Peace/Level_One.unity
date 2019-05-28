@@ -1732,7 +1732,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2bbacd54dd5bbae428a78c959642ce28, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3483191c47457b40b39dde208a97ca5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25853,7 +25853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLapText: {fileID: 190768782}
-  travelTime: 2
 --- !u!1001 &524944442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63451,7 +63450,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 1
+  m_TargetDisplay: 2
 --- !u!224 &1257620153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63958,7 +63957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLapText: {fileID: 2010513464}
-  travelTime: 2
 --- !u!1001 &1273452367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80369,7 +80367,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5bbfcd35891ce3b49ab0f0d19d60e97f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62a4c0fe84a4b3340a8170f5fa0ee928, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -94587,7 +94585,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!224 &1931847368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -103938,6 +103936,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 10.8
       objectReference: {fileID: 0}
+    - target: {fileID: 918414233836218543, guid: 2c160bb31630d6244b28a5b7bd2ae72e,
+        type: 3}
+      propertyPath: m_TargetDisplay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c160bb31630d6244b28a5b7bd2ae72e, type: 3}
 --- !u!1001 &1916318485517487187
@@ -104011,6 +104014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916318485609018412, guid: 9a4de79cadb161a468334364aa7de10e,
+        type: 3}
+      propertyPath: m_TargetDisplay
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4de79cadb161a468334364aa7de10e, type: 3}

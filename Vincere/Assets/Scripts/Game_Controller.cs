@@ -59,10 +59,6 @@ public class Game_Controller : MonoBehaviour
             {
                 playerScript.setActivity(true);
             }
-            foreach (Lap_Counter lapHandler in lapHandlers)
-            {
-                lapHandler.nextLap();
-            }
             raceStarted = true;
         }
         foreach(Car_Controller playerScript in playerScripts)
