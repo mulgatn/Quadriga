@@ -9,61 +9,23 @@ public class Lap_Counter : MonoBehaviour
     public Text currentLapText;
     private int lapIndicator;
     private string currentLap;
-    private Vector3 inScene;
-    private Vector3 outScene;
-    private float time;
-    public float travelTime;
 
-    private bool goingIn;
-    private bool goingOut;
 
     private void Awake()
     {
-        currentLap = laps[0];
-        inScene = transform.position;
-        outScene = new Vector2(inScene.x - 375f, inScene.y);
-        transform.position = outScene;
+        currentLap = "";
+        lapIndicator = 0;
     }
 
     private void Update()
     {
         currentLap = laps[lapIndicator];
         currentLapText.text = currentLap;
-        setLap();
     }
-
-    public void setLap()
-    {
-        if(goingIn)
-        {
-            time += Time.deltaTime;
-            transform.position = Vector2.Lerp(outScene, inScene, time / travelTime);
-            if (time / travelTime > 1f)
-            {
-                goingIn = false;
-                goingOut = true;
-                time = 0f;
-            }
-        }        
-        if(goingOut)
-        {
-            time += Time.deltaTime;
-            transform.position = Vector2.Lerp(inScene, outScene, time / travelTime);
-            if (time / travelTime > 1f)
-            {
-                if (goingOut)
-                    lapIndicator++;
-                if (lapIndicator == 7)
-                    lapIndicator = 6;
-                goingIn = false;
-                goingOut = false;
-                time = 0f;
-            }
-        }           
-    }
-
     public void nextLap()
     {
-        goingIn = true;
+        lapIndicator++;
+        if (lapIndicator == 7)
+            lapIndicator = 6;
     }
 }

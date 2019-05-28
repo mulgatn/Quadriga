@@ -52,16 +52,16 @@ public class Player_Movement : MonoBehaviour
         {
             goRight = KeyCode.B;
             goLeft = KeyCode.V;
-            //goLeftAlt = KeyCode.Joystick1Button0;
-            //goRightAlt = KeyCode.Joystick1Button3;
+            goLeftAlt = KeyCode.Joystick1Button0;
+            goRightAlt = KeyCode.Joystick1Button3;
             boost = "Player1_Boost";
         }
         else
         {
             goRight = KeyCode.Keypad2;
             goLeft = KeyCode.Keypad1;
-            //goLeftAlt = KeyCode.Joystick2Button0;
-            //goRightAlt = KeyCode.Joystick2Button3;
+            goLeftAlt = KeyCode.Joystick2Button0;
+            goRightAlt = KeyCode.Joystick2Button3;
             boost = "Player2_Boost";
         }
     }
@@ -92,6 +92,11 @@ public class Player_Movement : MonoBehaviour
             goingRight = true;
         else
             goingRight = false;
+        if((Input.GetKey(goRight) || Input.GetKey(goLeftAlt)) && (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt)))
+        {
+            goingLeft = false;
+            goingRight = false;
+        }
 
         if (rotate != 0f)
             if (speedMagnitude == minSpeed)
