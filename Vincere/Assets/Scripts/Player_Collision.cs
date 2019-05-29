@@ -83,6 +83,7 @@ public class Player_Collision : MonoBehaviour
                         FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
                     else
                         FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player1");
+                    FindObjectOfType<Audio_Manager>().Play("Obstacle_Hit");
                 }
                     
             }
@@ -94,6 +95,7 @@ public class Player_Collision : MonoBehaviour
                         FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
                     else
                         FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player2");
+                    FindObjectOfType<Audio_Manager>().Play("Obstacle_Hit");
                 }
             }
             if (!movement.boostUsing)
