@@ -190,7 +190,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!224 &556937433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -257,23 +257,27 @@ MonoBehaviour:
   playerOneWin:
   - {fileID: 21300000, guid: cfbd0a79fa2fed2449a052228ef62268, type: 3}
   - {fileID: 21300000, guid: 7e41b05117f64aa409d7f25e5996b6c2, type: 3}
-  - {fileID: 21300000, guid: 4add7d75f8f990841a690fe77691a0ef, type: 3}
-  - {fileID: 21300000, guid: 7e41b05117f64aa409d7f25e5996b6c2, type: 3}
+  - {fileID: 21300000, guid: b4cd1d7e7e75e1d46b4526bec69f55a9, type: 3}
+  - {fileID: 21300000, guid: b5101f9cf22f75947bcb398252b85d51, type: 3}
   playerOneLose:
   - {fileID: 21300000, guid: 4d1de53cee4642741abfe56b62c3fe0f, type: 3}
   - {fileID: 21300000, guid: bc7e2207c1957074a8affcb4f1435bd6, type: 3}
   - {fileID: 21300000, guid: a635885271ea5f0428ff62db11290e29, type: 3}
-  - {fileID: 21300000, guid: bc7e2207c1957074a8affcb4f1435bd6, type: 3}
+  - {fileID: 21300000, guid: ded00dfc2832242489cb9512e23dcfe7, type: 3}
   playerTwoWin:
   - {fileID: 21300000, guid: 793ecf008b01c8b4e9df0a87ba9a32f7, type: 3}
   - {fileID: 21300000, guid: 4c3548af2db9d734d890dfdc60544630, type: 3}
   - {fileID: 21300000, guid: 11be19aec15bd494aaa48b2d15e8735d, type: 3}
-  - {fileID: 21300000, guid: 4c3548af2db9d734d890dfdc60544630, type: 3}
+  - {fileID: 21300000, guid: 192e7855c7f268b4c9d03fd1a010cebc, type: 3}
   playerTwoLose:
   - {fileID: 21300000, guid: 5eba689a4ff673444937cffeaff6f3b7, type: 3}
   - {fileID: 21300000, guid: d006af28899845d4bb40661ba27add90, type: 3}
   - {fileID: 21300000, guid: 965a0197d5d1d374e8055ba61f11572c, type: 3}
-  - {fileID: 21300000, guid: d006af28899845d4bb40661ba27add90, type: 3}
+  - {fileID: 21300000, guid: 1c9f58e084a54ee4f8570bde8f656c98, type: 3}
+  Player1AlbusWins: []
+  Player2AlbusWins: []
+  Player1BrutusLose: []
+  Player2BrutusLose: []
   playerOne: {fileID: 844708243}
   playerTwo: {fileID: 1724203879}
 --- !u!1 &730157027
@@ -354,7 +358,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 1
+  m_TargetDisplay: 2
 --- !u!224 &730157031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -508,7 +512,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -581,7 +585,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
