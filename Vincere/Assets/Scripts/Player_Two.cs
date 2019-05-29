@@ -16,6 +16,6 @@ public class Player_Two : Car_Controller
             c.SetActive(false);
         horses[PlayerPrefs.GetInt("Player2_Character")].SetActive(true);
         chariots[PlayerPrefs.GetInt("Player2_Character")].SetActive(true);
-        position = 1;
+        position = 0;
     }
 }

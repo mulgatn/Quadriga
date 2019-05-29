@@ -14,6 +14,7 @@ public class Player_Collision : MonoBehaviour
     private int lapCheckPointCount;
     public int totalCheckPointCount;
     private int obstacleID;
+    private int playerNumber;
 
     public Lap_Counter lapHandler;
     void Start()
@@ -23,6 +24,7 @@ public class Player_Collision : MonoBehaviour
         carController = transform.parent.gameObject.GetComponent<Car_Controller>();
         lapCheckPointCount = 0;
         totalCheckPointCount = 0;
+        playerNumber = carController.playerNumber;
     }
 
     protected void OnCollisionEnter2D(Collision2D other)
@@ -31,6 +33,7 @@ public class Player_Collision : MonoBehaviour
         {
             if (movement.speedMagnitude > 7f)
             {
+                playWallCollision();
                 cam_shaker.magnitude = movement.speedMagnitude;
                 cam_shaker.shakeTimer = cam_shaker.duration;
             }
@@ -129,5 +132,22 @@ public class Player_Collision : MonoBehaviour
             }         
         }
         
+    }
+
+    private void playWallCollision()
+    {
+        if (FindObjectOfType<Audio_Manager>())
+        {
+            if (playerNumber == 1)
+            {
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Player1_Wall"))
+                    FindObjectOfType<Audio_Manager>().Play("Player1_Wall");
+            }
+            else if (playerNumber == 2)
+            {
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Player2_Wall"))
+                    FindObjectOfType<Audio_Manager>().Play("Player2_Wall");
+            }
+        }
     }
 }

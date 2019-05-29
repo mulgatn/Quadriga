@@ -64,6 +64,21 @@ public class Audio_Manager : MonoBehaviour
         }
     }
 
+    public bool isPlaying(string name)
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.name == name)
+            {
+                if (s.source.isPlaying)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        return false;
+    }
+
     public void ResetSounds()
     {
         foreach (Sound s in sounds)
@@ -71,6 +86,5 @@ public class Audio_Manager : MonoBehaviour
             s.source.Stop();
             s.source.volume = s.volume;
         }
-            
     }
 }

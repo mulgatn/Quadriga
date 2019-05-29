@@ -18,7 +18,12 @@ public class Back_To_Main_Menu : MonoBehaviour
     void Update()
     {
         if (Input.anyKey)
+        {
             time = timer;
+            for (int i = 0; i < mainMenuCountDown.Length; i++)
+                mainMenuCountDown[i].text = "";
+        }
+            
         else
         {
             time -= Time.deltaTime;

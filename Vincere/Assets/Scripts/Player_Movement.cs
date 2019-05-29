@@ -86,12 +86,18 @@ public class Player_Movement : MonoBehaviour
         
         if (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt))
             goingLeft = true;
+            
         else
             goingLeft = false;
         if (Input.GetKey(goRight) || Input.GetKey(goRightAlt))
             goingRight = true;
         else
             goingRight = false;
+        if((Input.GetKey(goRight) || Input.GetKey(goRightAlt)) && (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt)))
+        {
+            goingLeft = false;
+            goingRight = false;
+        }
 
         if (rotate != 0f)
             if (speedMagnitude == minSpeed)
@@ -101,6 +107,19 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetButtonDown(boost) && carController.boostReady)
         {
+            if(FindObjectOfType<Audio_Manager>())
+            {
+                if(playerNumber == 1)
+                {
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Player1_Speed_Boost"))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Speed_Boost");
+                }
+                else if (playerNumber == 2)
+                {
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Player2_Speed_Boost"))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Speed_Boost");
+                }
+            }
             boostUsing = true;
             carController.boostReady = false;
             boostUsed = true;

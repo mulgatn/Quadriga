@@ -51,7 +51,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 49a3f410a8eb9104eb45f8681b8e5ea5, type: 3}
     name: Main_Menu
     type: 3
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 1
     stereo: 0
@@ -120,181 +120,325 @@ MonoBehaviour:
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 16192fc071e531e46a4af45f3027a554, type: 3}
-    name: Player_Player_Collision
-    type: 2
+  - clip: {fileID: 8300000, guid: 577cbf3c4e4bef04fbdfe63681f87e95, type: 3}
+    name: Player1_Brutus_Pick
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 577cbf3c4e4bef04fbdfe63681f87e95, type: 3}
+    name: Player2_Brutus_Pick
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: f085bbffbea6d4b4db7cde474093d2d8, type: 3}
-    name: Aurelia_lose
-    type: 3
+  - clip: {fileID: 8300000, guid: d6f5dd1d1768d04459ebd9f21a037b60, type: 3}
+    name: Player1_Aurelia_Pick
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d6f5dd1d1768d04459ebd9f21a037b60, type: 3}
+    name: Player2_Aurelia_Pick
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c0b84edc1beb98142977f3ff036b2d0e, type: 3}
+    name: Player1_Albus_Pick
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c0b84edc1beb98142977f3ff036b2d0e, type: 3}
+    name: Player2_Albus_Pick
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a9ba39f6793ea604fb2e7c07417a1860, type: 3}
+    name: Player1_Nubia_Pick
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a9ba39f6793ea604fb2e7c07417a1860, type: 3}
+    name: Player2_Nubia_Pick
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
     stereo: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: e95bf063159615144accd48b671a5a16, type: 3}
-    name: Brutus_win
-    type: 3
+    name: Player1_Brutus_Win
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: d6f5dd1d1768d04459ebd9f21a037b60, type: 3}
-    name: Aurelia_Selected
-    type: 3
+  - clip: {fileID: 8300000, guid: e95bf063159615144accd48b671a5a16, type: 3}
+    name: Player2_Brutus_Win
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 6e0c99ec711bda846845a7d759ee2466, type: 3}
-    name: Nubia_win
-    type: 3
+  - clip: {fileID: 8300000, guid: 965cd7154e5a0a44ca6dfecec4e3b0cc, type: 3}
+    name: Player1_Aurelia_Win
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 965cd7154e5a0a44ca6dfecec4e3b0cc, type: 3}
+    name: Player2_Aurelia_Win
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b2e547b947351bc4c9ece9f9de829153, type: 3}
-    name: Albus_win
-    type: 3
+    name: Player1_Albus_Win_1
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 7662bd30f6795284f823049901ea89ed, type: 3}
-    name: Albus_win2
-    type: 3
+    name: Player1_Albus_Win_2
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 6003af5df5c2f5b4cb3a70fbefc17771, type: 3}
-    name: Albus_win3
-    type: 3
+    name: Player1_Albus_Win_3
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 884f17a177557bd419c2c9f1901ba934, type: 3}
-    name: Brutus_lose
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 1d8a960fd7caefb4490c043fc50787c5, type: 3}
-    name: Brutus_fool
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: c0b84edc1beb98142977f3ff036b2d0e, type: 3}
-    name: Albus_selected
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 394b3b36aaf26e448bc96b8119c8dd6a, type: 3}
-    name: Albus_lose
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 847f35324c459eb419fce710a57af5a0, type: 3}
-    name: Brutus_Pitiful
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 577cbf3c4e4bef04fbdfe63681f87e95, type: 3}
-    name: Brutus_selected
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: b0bb3c6aefddd3840899e816fa17ae93, type: 3}
-    name: Aurelia_thankyou
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a9ba39f6793ea604fb2e7c07417a1860, type: 3}
-    name: Nubia_easy
-    type: 3
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 5e46c3a253fe1d84e933cd490303470f, type: 3}
-    name: Albus_lost
-    type: 3
+    name: Player1_Albus_Win_4
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 60b3519f5ef0ff24cbbb75c34fa26c61, type: 3}
-    name: Albus_win
-    type: 3
+    name: Player1_Albus_Win_5
+    type: 0
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 4de67d34be19c3f4c9d32b90096f5d5a, type: 3}
-    name: Nubia_lose
-    type: 3
+  - clip: {fileID: 8300000, guid: b2e547b947351bc4c9ece9f9de829153, type: 3}
+    name: Player2_Albus_Win_1
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 227a76bf3479081449b229bd298549a0, type: 3}
-    name: Horse_clop
-    type: 2
+  - clip: {fileID: 8300000, guid: 7662bd30f6795284f823049901ea89ed, type: 3}
+    name: Player2_Albus_Win_2
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 39847ad8f77e2b4428ef5083a63bef02, type: 3}
-    name: Horse_clop_loud
-    type: 2
+  - clip: {fileID: 8300000, guid: 6003af5df5c2f5b4cb3a70fbefc17771, type: 3}
+    name: Player2_Albus_Win_3
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 8119705f17bf01a4a9326cfc8c2098f2, type: 3}
-    name: Player_to_wall_loud
-    type: 2
+  - clip: {fileID: 8300000, guid: 5e46c3a253fe1d84e933cd490303470f, type: 3}
+    name: Player2_Albus_Win_4
+    type: 1
     volume: 1
     pitch: 1
     looping: 0
-    stereo: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 60b3519f5ef0ff24cbbb75c34fa26c61, type: 3}
+    name: Player2_Albus_Win_5
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0163844bb7002294797d2df892ce0820, type: 3}
+    name: Player1_Nubia_Win
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0163844bb7002294797d2df892ce0820, type: 3}
+    name: Player2_Nubia_Win
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 93c8690b37128264b86c44cf0c277b71, type: 3}
+    name: Player1_Brutus_Lose_1
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c3403150a2a000f4e835803bc953a594, type: 3}
+    name: Player1_Brutus_Lose_2
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 847f35324c459eb419fce710a57af5a0, type: 3}
+    name: Player1_Brutus_Lose_3
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 93c8690b37128264b86c44cf0c277b71, type: 3}
+    name: Player2_Brutus_Lose_1
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c3403150a2a000f4e835803bc953a594, type: 3}
+    name: Player2_Brutus_Lose_2
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 847f35324c459eb419fce710a57af5a0, type: 3}
+    name: Player1_Brutus_Lose_3
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: f085bbffbea6d4b4db7cde474093d2d8, type: 3}
+    name: Player1_Aurelia_Lose
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: f085bbffbea6d4b4db7cde474093d2d8, type: 3}
+    name: Player2_Aurelia_Lose
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 394b3b36aaf26e448bc96b8119c8dd6a, type: 3}
+    name: Player1_Albus_Lose
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 394b3b36aaf26e448bc96b8119c8dd6a, type: 3}
+    name: Player2_Albus_Lose
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 53e2ac2d14663fd4eba9db241dd005b1, type: 3}
+    name: Player1_Nubia_Lose
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 53e2ac2d14663fd4eba9db241dd005b1, type: 3}
+    name: Player2_Nubia_Lose
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
+    name: Player1_Speed_Boost
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
+    name: Player2_Speed_Boost
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
+    name: Player1_Wall
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
+    name: Player2_Wall
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
     source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:
