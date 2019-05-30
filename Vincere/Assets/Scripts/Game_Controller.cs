@@ -60,8 +60,6 @@ public class Game_Controller : MonoBehaviour
                 playerScript.setActivity(true);
             }
             raceStarted = true;
-            if (FindObjectOfType<Audio_Manager>())
-                FindObjectOfType<Audio_Manager>().Play("First_Drum_Roll");
         }
         foreach(Car_Controller playerScript in playerScripts)
         {
@@ -72,6 +70,11 @@ public class Game_Controller : MonoBehaviour
                 gameOver = true;
             }
         }
+        if(lapControl())
+            if (FindObjectOfType<Audio_Manager>())
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Drum_Roll"))
+                    FindObjectOfType<Audio_Manager>().Play("Drum_Roll");
+
         if (gameOver)
             StartCoroutine(endGame());
         if (Input.GetKey(KeyCode.R))
@@ -91,6 +94,18 @@ public class Game_Controller : MonoBehaviour
         }
         yield return new WaitForSeconds(3f);
             SceneManager.LoadScene("End_Screen");
+    }
+
+    private bool lapControl()
+    {
+        foreach (Car_Controller playerScript in playerScripts)
+        {
+            if(playerScript.lapCount == 4)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
  

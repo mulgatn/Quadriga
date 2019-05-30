@@ -124,16 +124,8 @@ public class Player_Movement : MonoBehaviour
         {
             if(FindObjectOfType<Audio_Manager>())
             {
-                if(playerNumber == 1)
-                {
-                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Player1_Speed_Boost"))
-                        FindObjectOfType<Audio_Manager>().Play("Player1_Speed_Boost");
-                }
-                else if (playerNumber == 2)
-                {
-                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Player2_Speed_Boost"))
-                        FindObjectOfType<Audio_Manager>().Play("Player2_Speed_Boost");
-                }
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Speed_Boost"))
+                        FindObjectOfType<Audio_Manager>().Play("Speed_Boost");
             }
             boostUsing = true;
             carController.boostReady = false;
