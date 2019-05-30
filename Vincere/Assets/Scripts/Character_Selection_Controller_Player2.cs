@@ -33,11 +33,15 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
                 selection = Input.GetAxisRaw("Player2_Rotation");
                 if (selection > 0)
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Click");
                     index++;
                     rightArrow.sprite = arrows[1];
                 }
                 else if (selection < 0)
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Click");
                     index--;
                     leftArrow.sprite = arrows[1];
                 }

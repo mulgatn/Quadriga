@@ -5429,6 +5429,12 @@ MonoBehaviour:
   goingLeft: 0
   goingRight: 0
   dust: {fileID: 3429137015697810747}
+  horseSounds:
+  - {fileID: 8300000, guid: d95a5027de937c346af11fe3732f1678, type: 3}
+  - {fileID: 8300000, guid: 24a1151b3215b7a44a648f63282fa950, type: 3}
+  - {fileID: 8300000, guid: beb80f67f0c2f49448b219032d5601e5, type: 3}
+  - {fileID: 8300000, guid: de45bc80872266a4981cfde51bf6b770, type: 3}
+  - {fileID: 8300000, guid: 3fccd1377d3509c4da35358e730a9d18, type: 3}
 --- !u!114 &7368098412397647642
 MonoBehaviour:
   m_ObjectHideFlags: 0

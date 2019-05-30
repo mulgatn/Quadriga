@@ -13,7 +13,11 @@ public class Character_Selection_Controller : MonoBehaviour
     private void Start()
     {
         if (FindObjectOfType<Audio_Manager>())
+        {
             FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
+            FindObjectOfType<Audio_Manager>().setVolume("Main_Menu", 0.6f);
+        } 
+           
     }
 
     private void Update()
