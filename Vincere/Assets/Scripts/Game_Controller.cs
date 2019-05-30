@@ -60,6 +60,8 @@ public class Game_Controller : MonoBehaviour
                 playerScript.setActivity(true);
             }
             raceStarted = true;
+            if (FindObjectOfType<Audio_Manager>())
+                FindObjectOfType<Audio_Manager>().Play("First_Drum_Roll");
         }
         foreach(Car_Controller playerScript in playerScripts)
         {
@@ -80,6 +82,9 @@ public class Game_Controller : MonoBehaviour
 
     IEnumerator endGame()
     {
+        if (FindObjectOfType<Audio_Manager>())
+            if(!FindObjectOfType<Audio_Manager>().isPlaying("Game_Over"))
+                FindObjectOfType<Audio_Manager>().Play("Game_Over");
         foreach (Car_Controller playerScript in playerScripts)
         {
             playerScript.setActivity(false);
