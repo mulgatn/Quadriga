@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: 49a3f410a8eb9104eb45f8681b8e5ea5, type: 3}
+  - clip: {fileID: 8300000, guid: 13f5d963f939b794dafdefc0764f7b80, type: 3}
     name: Main_Menu
     type: 3
-    volume: 0.75
+    volume: 1
     pitch: 1
     looping: 1
     stereo: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 54d17f1f9c3041943b2437eeabb88eb0, type: 3}
     name: Crate_Break_Player1
     type: 0
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: -1
@@ -83,12 +83,12 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 54d17f1f9c3041943b2437eeabb88eb0, type: 3}
     name: Crate_Break_Player2
     type: 1
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+  - clip: {fileID: 8300000, guid: f4fe1244309a6f24e93738ae0a7dbaeb, type: 3}
     name: Cushion_Rip_Player1
     type: 0
     volume: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+  - clip: {fileID: 8300000, guid: f4fe1244309a6f24e93738ae0a7dbaeb, type: 3}
     name: Cushion_Rip_Player2
     type: 1
     volume: 1
@@ -312,21 +312,13 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
-    name: Player1_Speed_Boost
-    type: 0
+  - clip: {fileID: 8300000, guid: 3af539b940892f64491d23828154e55f, type: 3}
+    name: Speed_Boost
+    type: 2
     volume: 1
     pitch: 1
     looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
-    name: Player2_Speed_Boost
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
+    stereo: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
     name: Player1_Wall
@@ -360,7 +352,7 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 51b019fc7a4230e4d86f24f0626f9888, type: 3}
+  - clip: {fileID: 8300000, guid: d7aa48da88c9ac348bd20d6354e46501, type: 3}
     name: Player1_Lap
     type: 0
     volume: 1
@@ -368,7 +360,7 @@ MonoBehaviour:
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 51b019fc7a4230e4d86f24f0626f9888, type: 3}
+  - clip: {fileID: 8300000, guid: d7aa48da88c9ac348bd20d6354e46501, type: 3}
     name: Player2_Lap
     type: 1
     volume: 1
@@ -399,6 +391,30 @@ MonoBehaviour:
     pitch: 1
     looping: 1
     stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 1aed35b36ec002e4e9b96aa741a7d9c4, type: 3}
+    name: Drum_Roll
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 1
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 41211f190b7722c49873f7c41406b631, type: 3}
+    name: End_Game
+    type: 2
+    volume: 0.75
+    pitch: 1
+    looping: 1
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e4c2c279cfabe7447ac732f9f05d3658, type: 3}
+    name: Start_Button
+    type: 3
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 0
     source: {fileID: 0}
 --- !u!1 &5902049034744543798
 GameObject:

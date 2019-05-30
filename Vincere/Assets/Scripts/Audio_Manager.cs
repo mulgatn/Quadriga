@@ -105,4 +105,14 @@ public class Audio_Manager : MonoBehaviour
                 s.source.clip = p_clip;
         }
     }
+
+    public float getClipLength(string name)
+    {
+        foreach(Sound s in sounds)
+        {
+            if (s.name == name)
+                return s.source.clip.length;
+        }
+        return 0;
+    }
 }
