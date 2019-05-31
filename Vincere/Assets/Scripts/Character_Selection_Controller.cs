@@ -13,7 +13,13 @@ public class Character_Selection_Controller : MonoBehaviour
     private void Start()
     {
         if (FindObjectOfType<Audio_Manager>())
+        {
             FindObjectOfType<Audio_Manager>().Stop("Crowd_Main_Menu");
+            FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+            FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+            FindObjectOfType<Audio_Manager>().setVolume("Main_Menu", 0.6f);
+        } 
+           
     }
 
     private void Update()
@@ -22,7 +28,7 @@ public class Character_Selection_Controller : MonoBehaviour
         {
             timer += Time.deltaTime;
             if (timer > waitTime)
-                SceneManager.LoadScene("Level_One");        
+                SceneManager.LoadScene("Loading");        
         }
         else
             timer = 0;

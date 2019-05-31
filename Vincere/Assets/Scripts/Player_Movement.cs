@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    private enum HORSECLOP
+    {
+        NONE,
+        ONE,
+        TWO,
+        THREE,
+        FOUR,
+        FIVE
+    }
     private Rigidbody2D body;
 
     public float speedMagnitude;
@@ -26,57 +35,60 @@ public class Player_Movement : MonoBehaviour
     public bool goingRight;
 
 
-    private KeyCode turnLeft;
-    private KeyCode turnRight;
     private KeyCode goLeft;
     private KeyCode goRight;
-    private KeyCode turnLeftAlt;
-    private KeyCode turnRightAlt;
     private KeyCode goLeftAlt;
     private KeyCode goRightAlt;
     private string boost;
 
     private Car_Controller carController;
+    private int playerNumber;
 
     public ParticleSystem dust;
+
+    public AudioClip[] horseSounds;
+
+    private HORSECLOP horseClop;
 
 
     void Start()
     {
+        horseClop = HORSECLOP.NONE;
         carController = GetComponent<Car_Controller>();
         body = GetComponent<Rigidbody2D>();
+        if (carController.playerNumber == 1)
+            playerNumber = 1;
+        else if (carController.playerNumber == 2)
+            playerNumber = 2;
         breaking = false;
         speedMagnitude += acceleration;
         if (carController.playerNumber == 1)
         {
-            turnLeft = KeyCode.A;
-            turnRight = KeyCode.D;
             goRight = KeyCode.B;
             goLeft = KeyCode.V;
+            goLeftAlt = KeyCode.Joystick1Button0;
+            goRightAlt = KeyCode.Joystick1Button3;
             boost = "Player1_Boost";
         }
         else
         {
-            turnLeft = KeyCode.LeftArrow;
-            turnRight = KeyCode.RightArrow;
             goRight = KeyCode.Keypad2;
             goLeft = KeyCode.Keypad1;
-            turnLeftAlt = KeyCode.JoystickButton4;
-            turnRightAlt = KeyCode.JoystickButton5;
-            goLeftAlt = KeyCode.JoystickButton6;
-            goRightAlt = KeyCode.JoystickButton7;
+            goLeftAlt = KeyCode.Joystick2Button0;
+            goRightAlt = KeyCode.Joystick2Button3;
             boost = "Player2_Boost";
         }
     }
 
     public void check()
     {
-        if (carController.playerNumber == 1)
+        if (playerNumber == 1)
             rotate = Input.GetAxisRaw("Player1_Rotation");
-        else if (carController.playerNumber == 2)
+        else if (playerNumber == 2)
             rotate = Input.GetAxisRaw("Player2_Rotation");
 
         speedMagnitude = body.velocity.magnitude;
+        setHorseSpeed();
 
         var emission = dust.emission;
         emission.rateOverTime = speedMagnitude;
@@ -86,30 +98,35 @@ public class Player_Movement : MonoBehaviour
         else
             body.freezeRotation = true;
 
-        if (rotate != 0f)
-            if (speedMagnitude == minSpeed)
-                speedMagnitude += acceleration;
+        
         if (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt))
             goingLeft = true;
+            
         else
             goingLeft = false;
         if (Input.GetKey(goRight) || Input.GetKey(goRightAlt))
             goingRight = true;
         else
             goingRight = false;
-
-        if ((Input.GetKey(turnLeft) || Input.GetKey(turnLeftAlt)) && (Input.GetKey(turnRight) || Input.GetKey(turnRightAlt)))
+        if((Input.GetKey(goRight) || Input.GetKey(goRightAlt)) && (Input.GetKey(goLeft) || Input.GetKey(goLeftAlt)))
         {
-            speedMagnitude -= breakPower;
-            breaking = true;
-            if (speedMagnitude < minSpeed)
-                speedMagnitude = minSpeed;
+            goingLeft = false;
+            goingRight = false;
         }
-        else
-            breaking = false;
+
+        if (rotate != 0f)
+            if (speedMagnitude == minSpeed)
+                speedMagnitude += acceleration;
+
+        breakCheck(playerNumber);
 
         if (Input.GetButtonDown(boost) && carController.boostReady)
         {
+            if(FindObjectOfType<Audio_Manager>())
+            {
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying("Speed_Boost"))
+                        FindObjectOfType<Audio_Manager>().Play("Speed_Boost");
+            }
             boostUsing = true;
             carController.boostReady = false;
             boostUsed = true;
@@ -130,11 +147,17 @@ public class Player_Movement : MonoBehaviour
 
     public void Movement()
     {
+        Vector2 tmp = Vector2.zero;
         if (!breaking)
             body.angularVelocity = (rotate * torquePower);
         if (speedMagnitude < maxSpeed && speedMagnitude != minSpeed)
+        {
+            tmp = body.velocity;
             body.AddForce(transform.up * acceleration * maxSpeed);
+        }
+        tmp = body.velocity;
         body.velocity = ForwardVelocity();
+        tmp = body.velocity;
         if (goingRight || goingLeft)
         {
             if (goingRight)
@@ -148,6 +171,8 @@ public class Player_Movement : MonoBehaviour
                 body.velocity = body.velocity + temp;
             }
         }
+
+
         if (boostUsing && !breaking)
             speedUp();
     }
@@ -194,6 +219,8 @@ public class Player_Movement : MonoBehaviour
         body.velocity /= 2f;
         body.angularVelocity = 0;
         maxSpeed /= 2;
+        if (FindObjectOfType<Audio_Manager>() && speedMagnitude > 7.5f)
+            FindObjectOfType<Audio_Manager>().Play("Player_Player_Collision");
     }
 
     public bool isControlled()
@@ -202,5 +229,139 @@ public class Player_Movement : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    private void breakCheck(int p_playerNumber)
+    {
+        bool isPressed = false;
+        if (p_playerNumber == 1)
+            isPressed = Input.GetButton("Player1_Rotation");
+        else
+            isPressed = Input.GetButton("Player2_Rotation");
+
+        if (isPressed && rotate == 0)
+        {
+            speedMagnitude -= breakPower;
+            breaking = true;
+            if (speedMagnitude < minSpeed)
+                 speedMagnitude = minSpeed;
+        }
+        else
+            breaking = false;
+    }
+
+    private void setHorseSpeed()
+    {
+        if(FindObjectOfType<Audio_Manager>())
+        {
+            if(playerNumber == 1)
+            {
+                if(body.velocity.magnitude < 0.5f)
+                {
+                    FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    horseClop = HORSECLOP.NONE;
+                }
+                   
+                else if (body.velocity.magnitude > 0.5f && body.velocity.magnitude < 3f)
+                {
+                    if(horseClop != HORSECLOP.ONE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player1_Horse", horseSounds[0]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player1_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Horse");
+                    horseClop = HORSECLOP.ONE;
+                }
+                else if (body.velocity.magnitude > 3f && body.velocity.magnitude < 6f)
+                {
+                    if (horseClop != HORSECLOP.TWO)
+                        FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player1_Horse", horseSounds[1]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player1_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Horse");
+                    horseClop = HORSECLOP.TWO;
+                }
+                else if (body.velocity.magnitude > 6f && body.velocity.magnitude < 9f)
+                {
+                    if (horseClop != HORSECLOP.THREE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player1_Horse", horseSounds[2]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player1_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Horse");
+                    horseClop = HORSECLOP.THREE;
+                }
+                else if (body.velocity.magnitude > 9f && body.velocity.magnitude < 12f)
+                {
+                    if (horseClop != HORSECLOP.FOUR)
+                        FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player1_Horse", horseSounds[3]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player1_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Horse");
+                    horseClop = HORSECLOP.FOUR;
+                }
+                else if (body.velocity.magnitude > 12f)
+                {
+                    if (horseClop != HORSECLOP.FIVE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player1_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player1_Horse", horseSounds[4]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player1_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Horse");
+                    horseClop = HORSECLOP.FIVE;
+                }
+            }
+            else
+            {
+                if (body.velocity.magnitude < 0.5f)
+                {
+                    FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    horseClop = HORSECLOP.NONE;
+                }
+
+                else if (body.velocity.magnitude > 0.5f && body.velocity.magnitude < 3f)
+                {
+                    if (horseClop != HORSECLOP.ONE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player2_Horse", horseSounds[0]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player2_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Horse");
+                    horseClop = HORSECLOP.ONE;
+                }
+                else if (body.velocity.magnitude > 3f && body.velocity.magnitude < 6f)
+                {
+                    if (horseClop != HORSECLOP.TWO)
+                        FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player2_Horse", horseSounds[1]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player2_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Horse");
+                    horseClop = HORSECLOP.TWO;
+                }
+                else if (body.velocity.magnitude > 6f && body.velocity.magnitude < 9f)
+                {
+                    if (horseClop != HORSECLOP.THREE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player2_Horse", horseSounds[2]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player2_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Horse");
+                    horseClop = HORSECLOP.THREE;
+                }
+                else if (body.velocity.magnitude > 9f && body.velocity.magnitude < 12f)
+                {
+                    if (horseClop != HORSECLOP.FOUR)
+                        FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player2_Horse", horseSounds[3]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player2_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Horse");
+                    horseClop = HORSECLOP.FOUR;
+                }
+                else if (body.velocity.magnitude > 12f)
+                {
+                    if (horseClop != HORSECLOP.FIVE)
+                        FindObjectOfType<Audio_Manager>().Stop("Player2_Horse");
+                    FindObjectOfType<Audio_Manager>().setClip("Player2_Horse", horseSounds[4]);
+                    if (!FindObjectOfType<Audio_Manager>().isPlaying(("Player2_Horse")))
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Horse");
+                    horseClop = HORSECLOP.FIVE;
+                }
+            }
+        }
     }
 }

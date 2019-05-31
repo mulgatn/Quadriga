@@ -12,14 +12,14 @@ public class Obstacle : MonoBehaviour
     private float waitTimer;
     public float cooldown;
     private new BoxCollider2D collider;
-    private new Renderer renderer;
+    private new Renderer m_renderer;
     private Animator animator;
     public int obstacleID;
 
     private void Awake()
     {
         collider = GetComponent<BoxCollider2D>();
-        renderer = GetComponent<Renderer>();
+        m_renderer = GetComponent<Renderer>();
         animator = GetComponent<Animator>();
         obstacleID = Random.Range(0, 2);
         animator.SetInteger("Obstacle_Identifier", obstacleID);
@@ -37,16 +37,16 @@ public class Obstacle : MonoBehaviour
                 collider.enabled = false;
                 if (timer > blinkTimer)
                 {
-                    if (!renderer.enabled)
-                        renderer.enabled = true;
+                    if (!m_renderer.enabled)
+                        m_renderer.enabled = true;
                     else
-                        renderer.enabled = false;
+                        m_renderer.enabled = false;
                     timer = 0;
                 }
             }
             else
             {
-                renderer.enabled = true;
+                m_renderer.enabled = true;
                 collider.enabled = true;
             }
         }

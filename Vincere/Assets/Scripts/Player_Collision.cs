@@ -11,8 +11,10 @@ public class Player_Collision : MonoBehaviour
     public Car_Controller otherPlayer;
     public CinemachineVirtualCamera cam;
     private Camera_Shake cam_shaker;
-    public int checkPointCount;
+    private int lapCheckPointCount;
+    public int totalCheckPointCount;
     private int obstacleID;
+    private int playerNumber;
 
     public Lap_Counter lapHandler;
     void Start()
@@ -20,7 +22,9 @@ public class Player_Collision : MonoBehaviour
         movement = transform.parent.gameObject.GetComponent<Player_Movement>();
         cam_shaker = transform.parent.gameObject.GetComponent<Camera_Shake>();
         carController = transform.parent.gameObject.GetComponent<Car_Controller>();
-        checkPointCount = 0;
+        lapCheckPointCount = 0;
+        totalCheckPointCount = 0;
+        playerNumber = carController.playerNumber;
     }
 
     protected void OnCollisionEnter2D(Collision2D other)
@@ -29,6 +33,7 @@ public class Player_Collision : MonoBehaviour
         {
             if (movement.speedMagnitude > 7f)
             {
+                playWallCollision();
                 cam_shaker.magnitude = movement.speedMagnitude;
                 cam_shaker.shakeTimer = cam_shaker.duration;
             }
@@ -36,7 +41,7 @@ public class Player_Collision : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
-        {
+        {    
             cam_shaker.magnitude = movement.speedMagnitude / 3f;
             cam_shaker.shakeTimer = cam_shaker.duration;
             movement.playerCollision();
@@ -78,6 +83,7 @@ public class Player_Collision : MonoBehaviour
                         FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player1");
                     else
                         FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player1");
+                    FindObjectOfType<Audio_Manager>().Play("Obstacle_Hit");
                 }
                     
             }
@@ -89,6 +95,7 @@ public class Player_Collision : MonoBehaviour
                         FindObjectOfType<Audio_Manager>().Play("Crate_Break_Player2");
                     else
                         FindObjectOfType<Audio_Manager>().Play("Cushion_Rip_Player2");
+                    FindObjectOfType<Audio_Manager>().Play("Obstacle_Hit");
                 }
             }
             if (!movement.boostUsing)
@@ -104,12 +111,28 @@ public class Player_Collision : MonoBehaviour
 
             other.gameObject.GetComponent<Animator>().SetBool("Broken", true);
         }
-        if (other.gameObject == check_Points[checkPointCount])
+        if (other.gameObject == check_Points[lapCheckPointCount])
         {
-            checkPointCount++;
-            if (checkPointCount == check_Points.Length)
+            lapCheckPointCount++;
+            totalCheckPointCount++;
+            if (totalCheckPointCount > otherPlayer.transform.Find("Horses").GetComponent<Player_Collision>().totalCheckPointCount)
             {
-                checkPointCount = 0;
+                carController.position = 0;
+                otherPlayer.position = 1;
+            }
+                
+
+            if (lapCheckPointCount == check_Points.Length)
+            {
+                if(FindObjectOfType<Audio_Manager>() && carController.lapCount != 6)
+                {
+                    if (playerNumber == 1)
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Lap");
+                    else 
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Lap");
+                }
+                
+                    lapCheckPointCount = 0;
                 if (otherPlayer.lapCount > carController.lapCount)
                     carController.boostReady = true;
                 else
@@ -119,5 +142,22 @@ public class Player_Collision : MonoBehaviour
             }         
         }
         
+    }
+
+    private void playWallCollision()
+    {
+        if (FindObjectOfType<Audio_Manager>())
+        {
+            if (playerNumber == 1)
+            {
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Player1_Wall"))
+                    FindObjectOfType<Audio_Manager>().Play("Player1_Wall");
+            }
+            else if (playerNumber == 2)
+            {
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Player2_Wall"))
+                    FindObjectOfType<Audio_Manager>().Play("Player2_Wall");
+            }
+        }
     }
 }

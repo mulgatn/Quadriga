@@ -33,11 +33,15 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
                 selection = Input.GetAxisRaw("Player2_Rotation");
                 if (selection > 0)
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Click");
                     index++;
                     rightArrow.sprite = arrows[1];
                 }
                 else if (selection < 0)
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Click");
                     index--;
                     leftArrow.sprite = arrows[1];
                 }
@@ -58,6 +62,7 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
                 leftArrow.sprite = arrows[0];
                 rightArrow.sprite = arrows[0];
                 selected = true;
+                playSelected();
             }
         }
         else
@@ -77,10 +82,40 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
 
             if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
             {
+                stopSelected();
                 selected = false;
                 timer = 0.3f;
             }
                 
+        }
+    }
+    private void playSelected()
+    {
+        if (FindObjectOfType<Audio_Manager>())
+        {
+            if (index == 0)
+                FindObjectOfType<Audio_Manager>().Play("Player2_Brutus_Pick");
+            else if (index == 1)
+                FindObjectOfType<Audio_Manager>().Play("Player2_Aurelia_Pick");
+            else if (index == 2)
+                FindObjectOfType<Audio_Manager>().Play("Player2_Albus_Pick");
+            else if (index == 3)
+                FindObjectOfType<Audio_Manager>().Play("Player2_Nubia_Pick");
+        }
+    }
+
+    private void stopSelected()
+    {
+        if (FindObjectOfType<Audio_Manager>())
+        {
+            if (index == 0)
+                FindObjectOfType<Audio_Manager>().Stop("Player2_Brutus_Pick");
+            else if (index == 1)
+                FindObjectOfType<Audio_Manager>().Stop("Player2_Aurelia_Pick");
+            else if (index == 2)
+                FindObjectOfType<Audio_Manager>().Stop("Player2_Albus_Pick");
+            else if (index == 3)
+                FindObjectOfType<Audio_Manager>().Stop("Player2_Nubia_Pick");
         }
     }
 }

@@ -11,6 +11,7 @@ public class Main_Menu_Controller : MonoBehaviour
     public Image[] startTexts;
     public Canvas[] myCanvases;
     private bool pressedEnter;
+    private bool started;
 
     private Vector2 start;
     private Vector2 middle1;
@@ -57,8 +58,19 @@ public class Main_Menu_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
             pressedEnter = true;
         if(pressedEnter)
+        {
             if (FindObjectOfType<Audio_Manager>())
+            {
                 FindObjectOfType<Audio_Manager>().fadeOut("Crowd_Main_Menu", timer / travelTime);
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Start_Button") && !started)
+                {
+                    FindObjectOfType<Audio_Manager>().Play("Start_Button");
+                    started = true;
+                }    
+            }         
+        }
+            
+   
         if (timer / travelTime > 1f)
         {
             SceneManager.LoadScene("Character_Selection");
