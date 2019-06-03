@@ -147,17 +147,13 @@ public class Player_Movement : MonoBehaviour
 
     public void Movement()
     {
-        Vector2 tmp = Vector2.zero;
         if (!breaking)
             body.angularVelocity = (rotate * torquePower);
         if (speedMagnitude < maxSpeed && speedMagnitude != minSpeed)
         {
-            tmp = body.velocity;
             body.AddForce(transform.up * acceleration * maxSpeed);
         }
-        tmp = body.velocity;
         body.velocity = ForwardVelocity();
-        tmp = body.velocity;
         if (goingRight || goingLeft)
         {
             if (goingRight)
@@ -171,7 +167,6 @@ public class Player_Movement : MonoBehaviour
                 body.velocity = body.velocity + temp;
             }
         }
-
 
         if (boostUsing && !breaking)
             speedUp();
@@ -245,6 +240,7 @@ public class Player_Movement : MonoBehaviour
             breaking = true;
             if (speedMagnitude < minSpeed)
                  speedMagnitude = minSpeed;
+            body.angularVelocity /= 1.1f;
         }
         else
             breaking = false;

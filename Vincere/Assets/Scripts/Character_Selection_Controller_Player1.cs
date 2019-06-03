@@ -57,7 +57,7 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
                 if (selection != 0)
                     timer = 0f;
             }
-            if (Input.GetButtonDown("Player1_Rotation") && Input.GetAxisRaw("Player1_Rotation") == 0)
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button1))
             {
                 leftArrow.sprite = arrows[0];
                 rightArrow.sprite = arrows[0];
@@ -79,13 +79,6 @@ public class Character_Selection_Controller_Player1 : MonoBehaviour
             rightArrow.sprite = arrows[0];
 
             portrait.sprite = selectedPortraits[index];
-
-            if (Input.GetButtonDown("Player1_Rotation") && Input.GetAxisRaw("Player1_Rotation") == 0)
-            {
-                stopSelected();
-                selected = false;
-                timer = 0.3f;
-            }
         }
     }
 
