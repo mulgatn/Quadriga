@@ -57,7 +57,7 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
                 if (selection != 0)
                     timer = 0f;
             }
-            if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
+            if (Input.GetKey(KeyCode.Keypad0) || Input.GetKey(KeyCode.Joystick2Button1))
             {
                 leftArrow.sprite = arrows[0];
                 rightArrow.sprite = arrows[0];
@@ -79,14 +79,6 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
             rightArrow.sprite = arrows[0];
 
             portrait.sprite = selectedPortraits[index];
-
-            if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
-            {
-                stopSelected();
-                selected = false;
-                timer = 0.3f;
-            }
-                
         }
     }
     private void playSelected()
