@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -50,9 +51,17 @@ public class Player_Movement : MonoBehaviour
 
     private HORSECLOP horseClop;
 
+    private bool mainMenu;
+    public float mainMenuBoostTimer;
+    private float timer;
+
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Main_Menu")
+            mainMenu = true;
+        else
+            mainMenu = false;
         horseClop = HORSECLOP.NONE;
         carController = GetComponent<Car_Controller>();
         body = GetComponent<Rigidbody2D>();
@@ -82,6 +91,8 @@ public class Player_Movement : MonoBehaviour
 
     public void check()
     {
+        if (mainMenu)
+            mainMenuSpeedBoost();
         if (playerNumber == 1)
             rotate = Input.GetAxisRaw("Player1_Rotation");
         else if (playerNumber == 2)
@@ -359,5 +370,15 @@ public class Player_Movement : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void mainMenuSpeedBoost()
+    {
+        timer += Time.deltaTime;
+        if (timer > mainMenuBoostTimer)
+        {
+            carController.boostReady = true;
+            timer = 0f;
+        }         
     }
 }
