@@ -90,9 +90,7 @@ public class Player_Movement : MonoBehaviour
     }
 
     public void check()
-    {
-        if (mainMenu)
-            mainMenuSpeedBoost();
+    { 
         if (playerNumber == 1)
             rotate = Input.GetAxisRaw("Player1_Rotation");
         else if (playerNumber == 2)
@@ -154,6 +152,9 @@ public class Player_Movement : MonoBehaviour
             goingLeft = false;
             goingRight = false;
         }
+
+        if (mainMenu)
+            mainMenuSpeedBoost();
     }
 
     public void Movement()
