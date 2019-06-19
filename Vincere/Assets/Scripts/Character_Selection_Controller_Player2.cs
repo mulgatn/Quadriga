@@ -16,8 +16,16 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
     private bool pressed;
     private float timer;
     public bool selected;
+    private KeyCode scrollLeft;
+    private KeyCode scrollRight;
+    private KeyCode scrollLeftAlt;
+    private KeyCode scrollRightAlt;
     void Start()
     {
+        scrollRight = KeyCode.Keypad2;
+        scrollLeft = KeyCode.Keypad1;
+        scrollLeftAlt = KeyCode.Joystick2Button0;
+        scrollRightAlt = KeyCode.Joystick2Button3;
         index = 0;
         timer = 1f;
     }
@@ -30,14 +38,17 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
             portrait.sprite = portraits[index];
             if (timer > 0.5f)
             {
-                selection = Input.GetAxisRaw("Player2_Rotation");
-                if (selection > 0)
+                if (Input.GetKey(scrollRight) || Input.GetKey(scrollRightAlt))
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Click");
                     index++;
                     rightArrow.sprite = arrows[1];
                 }
-                else if (selection < 0)
+                else if (Input.GetKey(scrollLeft) || Input.GetKey(scrollLeftAlt))
                 {
+                    if (FindObjectOfType<Audio_Manager>())
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Click");
                     index--;
                     leftArrow.sprite = arrows[1];
                 }
@@ -50,10 +61,9 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
                     index = 0;
                 else if (index == -1)
                     index = portraits.Length - 1;
-                if (selection != 0)
-                    timer = 0f;
+                timer = 0f;
             }
-            if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
+            if (Input.GetButton("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
             {
                 leftArrow.sprite = arrows[0];
                 rightArrow.sprite = arrows[0];
@@ -75,14 +85,6 @@ public class Character_Selection_Controller_Player2 : MonoBehaviour
             rightArrow.sprite = arrows[0];
 
             portrait.sprite = selectedPortraits[index];
-
-            if (Input.GetButtonDown("Player2_Rotation") && Input.GetAxisRaw("Player2_Rotation") == 0)
-            {
-                stopSelected();
-                selected = false;
-                timer = 0.3f;
-            }
-                
         }
     }
     private void playSelected()

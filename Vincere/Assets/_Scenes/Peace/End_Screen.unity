@@ -274,10 +274,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d006af28899845d4bb40661ba27add90, type: 3}
   - {fileID: 21300000, guid: 965a0197d5d1d374e8055ba61f11572c, type: 3}
   - {fileID: 21300000, guid: 1c9f58e084a54ee4f8570bde8f656c98, type: 3}
-  Player1AlbusWins: []
-  Player2AlbusWins: []
-  Player1BrutusLose: []
-  Player2BrutusLose: []
   playerOne: {fileID: 844708243}
   playerTwo: {fileID: 1724203879}
 --- !u!1 &730157027

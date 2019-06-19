@@ -70,6 +70,15 @@ public class Game_Controller : MonoBehaviour
                 gameOver = true;
             }
         }
+        if(drumLapControl())
+            if (FindObjectOfType<Audio_Manager>())
+                if (!FindObjectOfType<Audio_Manager>().isPlaying("Drum_Roll"))
+                    FindObjectOfType<Audio_Manager>().Play("Drum_Roll");
+        if (crowdLapControl())
+            if (FindObjectOfType<Audio_Manager>())
+                FindObjectOfType<Audio_Manager>().setVolume("Crowd_In_Game", 0.45f);
+
+
         if (gameOver)
             StartCoroutine(endGame());
         if (Input.GetKey(KeyCode.R))
@@ -80,6 +89,9 @@ public class Game_Controller : MonoBehaviour
 
     IEnumerator endGame()
     {
+        if (FindObjectOfType<Audio_Manager>())
+            if(!FindObjectOfType<Audio_Manager>().isPlaying("Game_Over"))
+                FindObjectOfType<Audio_Manager>().Play("Game_Over");
         foreach (Car_Controller playerScript in playerScripts)
         {
             playerScript.setActivity(false);
@@ -87,5 +99,28 @@ public class Game_Controller : MonoBehaviour
         yield return new WaitForSeconds(3f);
             SceneManager.LoadScene("End_Screen");
     }
+
+    private bool drumLapControl()
+    {
+        foreach (Car_Controller playerScript in playerScripts)
+        {
+            if(playerScript.lapCount == 4)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool crowdLapControl()
+    {
+        foreach (Car_Controller playerScript in playerScripts)
+        {
+            if (playerScript.lapCount == 5)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
- 

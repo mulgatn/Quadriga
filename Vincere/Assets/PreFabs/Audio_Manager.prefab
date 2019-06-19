@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: 49a3f410a8eb9104eb45f8681b8e5ea5, type: 3}
+  - clip: {fileID: 8300000, guid: 13f5d963f939b794dafdefc0764f7b80, type: 3}
     name: Main_Menu
     type: 3
-    volume: 0.75
+    volume: 1
     pitch: 1
     looping: 1
     stereo: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 1182ac71afddb844ea773d8152f0c107, type: 3}
     name: Crowd_In_Game
     type: 2
-    volume: 0.75
+    volume: 0.5
     pitch: 1
     looping: 1
     stereo: 0
@@ -75,20 +75,20 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 54d17f1f9c3041943b2437eeabb88eb0, type: 3}
     name: Crate_Break_Player1
     type: 0
-    volume: 1
-    pitch: 0.75
+    volume: 0.75
+    pitch: 1
     looping: 0
     stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 54d17f1f9c3041943b2437eeabb88eb0, type: 3}
     name: Crate_Break_Player2
     type: 1
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+  - clip: {fileID: 8300000, guid: f4fe1244309a6f24e93738ae0a7dbaeb, type: 3}
     name: Cushion_Rip_Player1
     type: 0
     volume: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a96af5f044e85294a99420117991f1f5, type: 3}
+  - clip: {fileID: 8300000, guid: f4fe1244309a6f24e93738ae0a7dbaeb, type: 3}
     name: Cushion_Rip_Player2
     type: 1
     volume: 1
@@ -112,15 +112,15 @@ MonoBehaviour:
     looping: 0
     stereo: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 40e731298061ff64bae77e9b39701424, type: 3}
-    name: Player1_Wall
-    type: 0
+  - clip: {fileID: 8300000, guid: 44896ff0568309647bfae92985195e5c, type: 3}
+    name: Obstacle_Hit
+    type: 2
     volume: 1
     pitch: 1
     looping: 0
-    stereo: -1
+    stereo: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 99731c33eba4a38428477a1af01bae20, type: 3}
+  - clip: {fileID: 8300000, guid: 577cbf3c4e4bef04fbdfe63681f87e95, type: 3}
     name: Player1_Brutus_Pick
     type: 0
     volume: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 99731c33eba4a38428477a1af01bae20, type: 3}
+  - clip: {fileID: 8300000, guid: 577cbf3c4e4bef04fbdfe63681f87e95, type: 3}
     name: Player2_Brutus_Pick
     type: 1
     volume: 1
@@ -136,18 +136,18 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: dd186a57f05276045a30419300ac44d7, type: 3}
+  - clip: {fileID: 8300000, guid: 2f5632b1378932f49a95165310e1891c, type: 3}
     name: Player1_Aurelia_Pick
     type: 1
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: -1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: dd186a57f05276045a30419300ac44d7, type: 3}
+  - clip: {fileID: 8300000, guid: 2f5632b1378932f49a95165310e1891c, type: 3}
     name: Player2_Aurelia_Pick
     type: 1
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 3f61ea5c70ddc5341b3423cfd05bbb9e, type: 3}
     name: Player1_Nubia_Pick
     type: 0
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: -1
@@ -179,7 +179,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 3f61ea5c70ddc5341b3423cfd05bbb9e, type: 3}
     name: Player2_Nubia_Pick
     type: 1
-    volume: 1
+    volume: 0.75
     pitch: 1
     looping: 0
     stereo: 1
@@ -216,16 +216,8 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: b2e547b947351bc4c9ece9f9de829153, type: 3}
-    name: Player1_Albus_Win_1
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 7662bd30f6795284f823049901ea89ed, type: 3}
-    name: Player1_Albus_Win_2
+  - clip: {fileID: 8300000, guid: 6003af5df5c2f5b4cb3a70fbefc17771, type: 3}
+    name: Player1_Albus_Win
     type: 0
     volume: 1
     pitch: 1
@@ -233,63 +225,7 @@ MonoBehaviour:
     stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 6003af5df5c2f5b4cb3a70fbefc17771, type: 3}
-    name: Player1_Albus_Win_3
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 5e46c3a253fe1d84e933cd490303470f, type: 3}
-    name: Player1_Albus_Win_4
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 60b3519f5ef0ff24cbbb75c34fa26c61, type: 3}
-    name: Player1_Albus_Win_5
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: b2e547b947351bc4c9ece9f9de829153, type: 3}
-    name: Player2_Albus_Win_1
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 7662bd30f6795284f823049901ea89ed, type: 3}
-    name: Player2_Albus_Win_2
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 6003af5df5c2f5b4cb3a70fbefc17771, type: 3}
-    name: Player2_Albus_Win_3
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 5e46c3a253fe1d84e933cd490303470f, type: 3}
-    name: Player2_Albus_Win_4
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 60b3519f5ef0ff24cbbb75c34fa26c61, type: 3}
-    name: Player2_Albus_Win_5
+    name: Player2_Albus_Win
     type: 1
     volume: 1
     pitch: 1
@@ -313,23 +249,7 @@ MonoBehaviour:
     stereo: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 93c8690b37128264b86c44cf0c277b71, type: 3}
-    name: Player1_Brutus_Lose_1
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: c3403150a2a000f4e835803bc953a594, type: 3}
-    name: Player1_Brutus_Lose_2
-    type: 0
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 847f35324c459eb419fce710a57af5a0, type: 3}
-    name: Player1_Brutus_Lose_3
+    name: Player1_Brutus_Lose
     type: 0
     volume: 1
     pitch: 1
@@ -337,23 +257,7 @@ MonoBehaviour:
     stereo: -1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 93c8690b37128264b86c44cf0c277b71, type: 3}
-    name: Player2_Brutus_Lose_1
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: c3403150a2a000f4e835803bc953a594, type: 3}
-    name: Player2_Brutus_Lose_2
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 847f35324c459eb419fce710a57af5a0, type: 3}
-    name: Player1_Brutus_Lose_3
+    name: Player2_Brutus_Lose
     type: 1
     volume: 1
     pitch: 1
@@ -408,21 +312,13 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
-    name: Player1_Speed_Boost
-    type: 0
+  - clip: {fileID: 8300000, guid: 3af539b940892f64491d23828154e55f, type: 3}
+    name: Speed_Boost
+    type: 2
     volume: 1
     pitch: 1
     looping: 0
-    stereo: -1
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 55e56061d4ab04b4a863307325d0b9eb, type: 3}
-    name: Player2_Speed_Boost
-    type: 1
-    volume: 1
-    pitch: 1
-    looping: 0
-    stereo: 1
+    stereo: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 0d23bf51a5462e94481929b0f4e1878f, type: 3}
     name: Player1_Wall
@@ -440,9 +336,81 @@ MonoBehaviour:
     looping: 0
     stereo: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 44896ff0568309647bfae92985195e5c, type: 3}
-    name: Obstacle_Hit
+  - clip: {fileID: 8300000, guid: c3ea6afb7662a5c4c9de2e1f77b1207d, type: 3}
+    name: Player1_Click
+    type: 3
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c3ea6afb7662a5c4c9de2e1f77b1207d, type: 3}
+    name: Player2_Click
+    type: 3
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d7aa48da88c9ac348bd20d6354e46501, type: 3}
+    name: Player1_Lap
+    type: 0
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d7aa48da88c9ac348bd20d6354e46501, type: 3}
+    name: Player2_Lap
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 90b5da5970af4a146bca2e9344f2de01, type: 3}
+    name: Game_Over
     type: 2
+    volume: 1
+    pitch: 1
+    looping: 0
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d95a5027de937c346af11fe3732f1678, type: 3}
+    name: Player1_Horse
+    type: 0
+    volume: 1
+    pitch: 2.83
+    looping: 1
+    stereo: -1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d95a5027de937c346af11fe3732f1678, type: 3}
+    name: Player2_Horse
+    type: 1
+    volume: 1
+    pitch: 1
+    looping: 1
+    stereo: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 1aed35b36ec002e4e9b96aa741a7d9c4, type: 3}
+    name: Drum_Roll
+    type: 2
+    volume: 1
+    pitch: 1
+    looping: 1
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 41211f190b7722c49873f7c41406b631, type: 3}
+    name: End_Game
+    type: 2
+    volume: 0.75
+    pitch: 1
+    looping: 1
+    stereo: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e4c2c279cfabe7447ac732f9f05d3658, type: 3}
+    name: Start_Button
+    type: 3
     volume: 1
     pitch: 1
     looping: 0

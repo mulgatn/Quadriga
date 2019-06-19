@@ -10,10 +10,6 @@ public class End_Game_Controller : MonoBehaviour
     public Sprite[] playerOneLose;
     public Sprite[] playerTwoWin;
     public Sprite[] playerTwoLose;
-    public List<string> Player1AlbusWins;
-    public List<string> Player2AlbusWins;
-    public List<string> Player1BrutusLose;
-    public List<string> Player2BrutusLose;
     public Image playerOne;
     public Image playerTwo;
 
@@ -23,47 +19,13 @@ public class End_Game_Controller : MonoBehaviour
     private bool winPhrase;
     private bool losePhrase;
 
-    private void Awake()
-    {
-        //Player1 Albus Win Phrases
-        {
-            Player1AlbusWins.Add("Player1_Albus_Win_1");
-            Player1AlbusWins.Add("Player1_Albus_Win_2");
-            Player1AlbusWins.Add("Player1_Albus_Win_3");
-            Player1AlbusWins.Add("Player1_Albus_Win_4");
-            Player1AlbusWins.Add("Player1_Albus_Win_5");
-        }
-
-        //Player2 Albus Win Phrases
-        {
-            Player2AlbusWins.Add("Player2_Albus_Win_1");
-            Player2AlbusWins.Add("Player2_Albus_Win_2");
-            Player2AlbusWins.Add("Player2_Albus_Win_3");
-            Player2AlbusWins.Add("Player2_Albus_Win_4");
-            Player2AlbusWins.Add("Player2_Albus_Win_5");
-        }
-
-        //Player1 Brutus Lose Phrases
-        {
-            Player1BrutusLose.Add("Player1_Brutus_Lose_1");
-            Player1BrutusLose.Add("Player1_Brutus_Lose_2");
-            //Pitiful
-            //Player1BrutusLose.Add("Player1_Brutus_Lose_3");
-        }
-
-        //Player2 Brutus Lose Phrases
-        {
-            Player2BrutusLose.Add("Player2_Brutus_Lose_1");
-            Player2BrutusLose.Add("Player2_Brutus_Lose_2");
-            //Pitiful
-            //Player2BrutusLose.Add("Player2_Brutus_Lose_3");
-        }
-    }
-
     private void Start()
     {
         if (FindObjectOfType<Audio_Manager>())
+        {
             FindObjectOfType<Audio_Manager>().ResetSounds();
+            FindObjectOfType<Audio_Manager>().Play("End_Game");
+        }
         winner = PlayerPrefs.GetInt("Winner");
         playerOneIndex = PlayerPrefs.GetInt("Player1_Character");
         playerTwoIndex = PlayerPrefs.GetInt("Player2_Character");
@@ -88,7 +50,7 @@ public class End_Game_Controller : MonoBehaviour
 
     IEnumerator playPhrases()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         //Play win phrase
         if (FindObjectOfType<Audio_Manager>() && !winPhrase)
         {
@@ -100,7 +62,7 @@ public class End_Game_Controller : MonoBehaviour
                 else if (playerOneIndex == 1)
                     FindObjectOfType<Audio_Manager>().Play("Player1_Aurelia_Win");
                 else if (playerOneIndex == 2)
-                    FindObjectOfType<Audio_Manager>().Play(Player1AlbusWins[Random.Range(0,Player1AlbusWins.Count)]);
+                    FindObjectOfType<Audio_Manager>().Play("Player1_Albus_Win");
                 else if (playerOneIndex == 3)
                     FindObjectOfType<Audio_Manager>().Play("Player1_Nubia_Win");
             }
@@ -111,7 +73,7 @@ public class End_Game_Controller : MonoBehaviour
                 else if (playerTwoIndex == 1)
                     FindObjectOfType<Audio_Manager>().Play("Player2_Aurelia_Win");
                 else if (playerTwoIndex == 2)
-                    FindObjectOfType<Audio_Manager>().Play(Player2AlbusWins[Random.Range(0, Player2AlbusWins.Count)]);
+                    FindObjectOfType<Audio_Manager>().Play("Player2_Albus_Win");
                 else if (playerTwoIndex == 3)
                     FindObjectOfType<Audio_Manager>().Play("Player2_Nubia_Win");
             }
@@ -126,7 +88,7 @@ public class End_Game_Controller : MonoBehaviour
             if (winner == 2)
             {
                 if (playerOneIndex == 0)
-                    FindObjectOfType<Audio_Manager>().Play(Player1BrutusLose[Random.Range(0, Player1BrutusLose.Count)]);
+                    FindObjectOfType<Audio_Manager>().Play("Player1_Brutus_Lose");
                 else if (playerOneIndex == 1)
                     FindObjectOfType<Audio_Manager>().Play("Player1_Aurelia_Lose");
                 else if (playerOneIndex == 2)
@@ -137,7 +99,7 @@ public class End_Game_Controller : MonoBehaviour
             else if (winner == 1)
             {
                 if (playerTwoIndex == 0)
-                    FindObjectOfType<Audio_Manager>().Play(Player2BrutusLose[Random.Range(0, Player2BrutusLose.Count)]);
+                    FindObjectOfType<Audio_Manager>().Play("Player2_Brutus_Lose");
                 else if (playerTwoIndex == 1)
                     FindObjectOfType<Audio_Manager>().Play("Player2_Aurelia_Lose");
                 else if (playerTwoIndex == 2)
@@ -147,5 +109,8 @@ public class End_Game_Controller : MonoBehaviour
             }
         }
 
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene("Main_Menu");
     }
 }

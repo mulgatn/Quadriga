@@ -124,6 +124,14 @@ public class Player_Collision : MonoBehaviour
 
             if (lapCheckPointCount == check_Points.Length)
             {
+                if(FindObjectOfType<Audio_Manager>() && carController.lapCount != 6)
+                {
+                    if (playerNumber == 1)
+                        FindObjectOfType<Audio_Manager>().Play("Player1_Lap");
+                    else 
+                        FindObjectOfType<Audio_Manager>().Play("Player2_Lap");
+                }
+                
                     lapCheckPointCount = 0;
                 if (otherPlayer.lapCount > carController.lapCount)
                     carController.boostReady = true;
