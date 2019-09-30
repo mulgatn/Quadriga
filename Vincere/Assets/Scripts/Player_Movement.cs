@@ -54,6 +54,7 @@ public class Player_Movement : MonoBehaviour
     private bool mainMenu;
     public float mainMenuBoostTimer;
     private float timer;
+    public float rotationMultiplier;
 
 
     void Start()
@@ -90,11 +91,8 @@ public class Player_Movement : MonoBehaviour
     }
 
     public void check()
-    { 
-        if (playerNumber == 1)
-            rotate = Input.GetAxisRaw("Player1_Rotation");
-        else if (playerNumber == 2)
-            rotate = Input.GetAxisRaw("Player2_Rotation");
+    {
+        setRotation();
 
         speedMagnitude = body.velocity.magnitude;
         setHorseSpeed();
@@ -381,5 +379,28 @@ public class Player_Movement : MonoBehaviour
             carController.boostReady = true;
             timer = 0f;
         }         
+    }
+
+    private void setRotation()
+    {
+        if (playerNumber == 1)
+        {
+            if (Input.GetButton("Player1_Rotation"))
+                rotate += Input.GetAxisRaw("Player1_Rotation") * rotationMultiplier;
+            else
+                rotate = 0;
+        }
+        else if (playerNumber == 2)
+        {
+            if (Input.GetButton("Player2_Rotation"))
+                rotate += Input.GetAxisRaw("Player2_Rotation") * rotationMultiplier;
+            else
+                rotate = 0;
+        }
+
+        if (rotate > 1f)
+            rotate = 1f;
+        if (rotate < -1f)
+            rotate = -1f;
     }
 }
