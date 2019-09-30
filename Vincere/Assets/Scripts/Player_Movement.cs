@@ -54,6 +54,9 @@ public class Player_Movement : MonoBehaviour
     private bool mainMenu;
     public float mainMenuBoostTimer;
     private float timer;
+
+
+    [Range(.0f, 1f)]
     public float rotationMultiplier;
 
 
