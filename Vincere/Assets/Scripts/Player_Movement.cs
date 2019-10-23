@@ -203,7 +203,7 @@ public class Player_Movement : MonoBehaviour
 
     public void BoundCollision()
     {
-        body.velocity = Vector2.zero;
+        //body.velocity = Vector2.zero;
         body.angularVelocity = 0;
         maxSpeed /= 2;
     }

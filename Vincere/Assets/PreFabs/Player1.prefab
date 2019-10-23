@@ -5435,8 +5435,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: beb80f67f0c2f49448b219032d5601e5, type: 3}
   - {fileID: 8300000, guid: de45bc80872266a4981cfde51bf6b770, type: 3}
   - {fileID: 8300000, guid: 3fccd1377d3509c4da35358e730a9d18, type: 3}
-  mainMenuBoostTimer: 0
-  rotationMultiplier: 0.05
+  mainMenuBoostTimer: 5
+  rotationMultiplier: 1
 --- !u!114 &7368098412397647642
 MonoBehaviour:
   m_ObjectHideFlags: 0
